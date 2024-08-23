@@ -1,30 +1,75 @@
 package Pessoa;
 
-import java.util.ArrayList;
+import Objetivo.Objetivo;
+import Profissao.Profissao;
 
 public class Mafalda extends Pessoa {
 
-    private Objetivo objetivoVida;
     private Profissao profissao;
-    private int necessidadeRefeicao;
+    private Objetivo objetivoAtual;
     private int estatuto;
-    private int educacao;
-    private ArrayList<Profissao> propriedades;
-    private ArrayList<Npc> familia;
+    private int saude;
+    private int humor;
+    private int habilidade;
+    private int dinheiro;
 
-    public Mafalda(String nome, double dinheiro) {
-        super(nome, dinheiro);
+    /**
+     * Método construtor com o parâmetro e atributo da superclasse
+     * @param nome
+     */
+    public Mafalda(String nome) {
+        super(nome);
     }
 
-    public Mafalda(String nome, double dinheiro, Objetivo objetivoVida, Profissao profissao, int necessidadeRefeicao,
-                   int estatuto, int educacao, ArrayList<Profissao> propriedades, ArrayList<Npc> familia) {
-        super(nome, dinheiro);
-        this.objetivoVida = objetivoVida;
+    /**
+     * Método construtor com o atributo e parâmetro da superclasse e os atributos e nomes da classe Mafalda
+     * @param nome
+     * @param profissao
+     * @param objetivoAtual
+     */
+    public Mafalda(String nome, Profissao profissao, Objetivo objetivoAtual) {
+        super(nome);
         this.profissao = profissao;
-        this.necessidadeRefeicao = necessidadeRefeicao;
-        this.estatuto = estatuto;
-        this.educacao = educacao;
-        this.propriedades = propriedades;
-        this.familia = familia;
+        this.estatuto = 0;
+        this.saude = 0;
+        this.humor = 0;
+        this.habilidade = 0;
+        this.dinheiro = 0;
+        this.objetivoAtual = objetivoAtual;
+    }
+
+    public int getEstatuto() {
+        return estatuto;
+    }
+
+    public int getSaude() {
+        return saude;
+    }
+
+    public int getHumor() {
+        return humor;
+    }
+
+    public int getHabilidade() {
+        return habilidade;
+    }
+
+    public int getDinheiro() {
+        return dinheiro;
+    }
+
+    /**
+     * Método que exibe os detalhes da classe Mafalda e da classe Profissao
+     */
+    public void exibirDetalhes() {
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Profissão: " + this.profissao);
+        System.out.println("Objetivo atual: " + this.objetivoAtual);
+    }
+
+    public void calcularEstatuto() {
+        estatuto = saude + humor + habilidade + dinheiro / 4;
+        System.out.println("Estatuto atual de Mafalda: " + estatuto);
     }
 }
+
