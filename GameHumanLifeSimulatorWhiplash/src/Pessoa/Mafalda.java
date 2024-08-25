@@ -59,12 +59,23 @@ public class Mafalda extends Pessoa {
     }
 
     /**
-     * Método que exibe os detalhes da classe Mafalda e da classe Profissao
+     * Método que exibe os detalhes de <b>Mafalda</b> e <b>Profissao</b>
      */
     public void exibirDetalhes() {
         System.out.println("Nome: " + this.getNome());
         System.out.println("Profissão: " + this.profissao);
         System.out.println("Objetivo atual: " + this.objetivoAtual);
+        System.out.println("Estatuto atual: " + this.estatuto);
+        System.out.println("********************************");
+        System.out.println();
+    }
+
+    public void andarDeBike() {
+        saude += 40;
+        dinheiro -= 20;
+        humor += 30;
+        habilidade -= 10;
+        estatuto = saude + humor + habilidade + dinheiro / 4;
     }
 
     public void calcularEstatuto() {

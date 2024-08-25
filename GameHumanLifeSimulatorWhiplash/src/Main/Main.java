@@ -8,8 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Profissao profissao = new Profissao("Garçonete", 10, false);
+        Profissao profissao = new Profissao("Garçonete", 10.00, false);
         Mafalda mafalda = new Mafalda("Mafalda", profissao, Objetivo.COMPRAR_SAXOFONE);
+        mafalda.exibirDetalhes();
+
+        mafalda.andarDeBike();
         mafalda.exibirDetalhes();
     }
 }

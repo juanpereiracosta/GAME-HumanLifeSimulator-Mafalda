@@ -31,7 +31,7 @@ public class Profissao {
         } else {
             varFormal = "Não";
         }
-        return "Nome: " + nome + ", Salário por Hora: " + salarioHora + ", Formal: " + varFormal;
+        return nome + " | Salário por hora: €" + salarioHora + " | Formal: " + varFormal;
     }
 
 }
