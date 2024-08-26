@@ -14,7 +14,7 @@ public class Mafalda extends Pessoa {
     private int dinheiro;
 
     /**
-     * Método construtor com o parâmetro e atributo da superclasse
+     * Método construtor para <b>Mafalda</b> com atributo da superclasse <b>Pessoa</b>
      * @param nome
      */
     public Mafalda(String nome) {
@@ -58,6 +58,22 @@ public class Mafalda extends Pessoa {
         return dinheiro;
     }
 
+    public void setSaude(int saude) {
+        this.saude = saude;
+    }
+
+    public void setHumor(int humor) {
+        this.humor = humor;
+    }
+
+    public void setHabilidade(int habilidade) {
+        this.habilidade = habilidade;
+    }
+
+    public void setDinheiro(int dinheiro) {
+        this.dinheiro = dinheiro;
+    }
+
     /**
      * Método que exibe os detalhes de <b>Mafalda</b> e <b>Profissao</b>
      */
@@ -65,22 +81,17 @@ public class Mafalda extends Pessoa {
         System.out.println("Nome: " + this.getNome());
         System.out.println("Profissão: " + this.profissao);
         System.out.println("Objetivo atual: " + this.objetivoAtual);
-        System.out.println("Estatuto atual: " + this.estatuto);
+        calcularEstatuto();
         System.out.println("********************************");
         System.out.println();
-    }
-
-    public void andarDeBike() {
-        saude += 40;
-        dinheiro -= 20;
-        humor += 30;
-        habilidade -= 10;
-        estatuto = saude + humor + habilidade + dinheiro / 4;
     }
 
     public void calcularEstatuto() {
         estatuto = saude + humor + habilidade + dinheiro / 4;
         System.out.println("Estatuto atual de Mafalda: " + estatuto);
     }
+
+
+
 }
 
