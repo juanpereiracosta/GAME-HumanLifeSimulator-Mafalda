@@ -79,8 +79,8 @@ public class Mafalda extends Pessoa {
      */
     public void exibirDetalhes() {
         System.out.println("Nome: " + this.getNome());
-        System.out.println("Profissão: " + this.profissao);
-        System.out.println("Objetivo atual: " + this.objetivoAtual);
+        System.out.println("Profissão: " + profissao);
+        System.out.println("Objetivo atual: " + objetivoAtual);
         calcularEstatuto();
         System.out.println("********************************");
         System.out.println();

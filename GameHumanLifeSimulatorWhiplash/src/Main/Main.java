@@ -19,7 +19,7 @@ public class Main {
         HumorComportamentos humorComportamentos = new HumorComportamentos(mafalda);
         HabilidadeComportamentos habilidadeComportamentos = new HabilidadeComportamentos(mafalda);
         DinheiroComportamentos dinheiroComportamentos = new DinheiroComportamentos(mafalda);
-
+        Sims sims  = new Sims();
         /*mafalda.exibirDetalhes();
         saudeComportamentos.andarDeBike();
         mafalda.exibirDetalhes();
@@ -29,8 +29,6 @@ public class Main {
         mafalda.exibirDetalhes();
         habilidadeComportamentos.praticar();
         mafalda.exibirDetalhes();*/
-
-        Sims sims = new Sims();
 
         sims.jogo();
 
