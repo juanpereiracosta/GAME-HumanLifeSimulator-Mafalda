@@ -90,8 +90,5 @@ public class Mafalda extends Pessoa {
         estatuto = saude + humor + habilidade + dinheiro / 4;
         System.out.println("Estatuto atual de Mafalda: " + estatuto);
     }
-
-
-
 }
 

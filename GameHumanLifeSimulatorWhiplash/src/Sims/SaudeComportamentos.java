@@ -42,4 +42,11 @@ public class SaudeComportamentos {
         mafalda.calcularEstatuto();
     }
 
+    public void tomarCafe() {
+        mafalda.setSaude(mafalda.getSaude() - 30);
+        mafalda.setDinheiro(mafalda.getDinheiro() - 10);
+        mafalda.setHumor(mafalda.getHumor() + 60);
+        mafalda.setHabilidade(mafalda.getHabilidade() - 50);
+        mafalda.calcularEstatuto();
+    }
 }
