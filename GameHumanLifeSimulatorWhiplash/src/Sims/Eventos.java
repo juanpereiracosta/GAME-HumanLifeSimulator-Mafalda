@@ -40,4 +40,5 @@ public class Eventos {
         System.out.println("Nesse momento, sua habilidade diminuiu um pouco.");
     }
 
+
 }

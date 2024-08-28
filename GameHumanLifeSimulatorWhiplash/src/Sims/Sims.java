@@ -8,14 +8,21 @@ import java.util.Scanner;
 
 public class Sims {
 
+    Scanner scanner = new Scanner(System.in);
+
     private Mafalda mafalda;
-    private SaudeComportamentos saudeComportamentos;
-    private HabilidadeComportamentos habilidadeComportamentos;
-    private HumorComportamentos humorComportamentos;
-    private DinheiroComportamentos dinheiroComportamentos;
     private Eventos eventos;
 
-    Scanner scanner = new Scanner(System.in);
+    /**
+     * Método construtor de <b>Sims</b>
+     * @param mafalda
+     */
+    public Sims(Mafalda mafalda) {
+        this.mafalda = mafalda;
+
+        // A instância de Eventos deve operar sobre a instância específica de Mafalda que foi passada como parãmetro
+        this.eventos = new Eventos(mafalda);
+    }
 
     public void jogo() {
 

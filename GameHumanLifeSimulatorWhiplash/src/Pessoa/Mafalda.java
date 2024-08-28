@@ -5,16 +5,15 @@ import Profissao.Profissao;
 
 public class Mafalda extends Pessoa {
 
-    private Profissao profissao;
+
     private Objetivo objetivoAtual;
-    private int estatuto;
     private int saude;
     private int humor;
     private int habilidade;
     private int dinheiro;
 
     /**
-     * Método construtor para <b>Mafalda</b> com atributo da superclasse <b>Pessoa</b>
+     * Método construtor para <b>Mafalda</b> com atributo e parãmetro da superclasse <b>Pessoa</b>
      * @param nome
      */
     public Mafalda(String nome) {
@@ -22,14 +21,13 @@ public class Mafalda extends Pessoa {
     }
 
     /**
-     * Método construtor com o atributo e parâmetro da superclasse e os atributos e nomes da classe Mafalda
+     * Método construtor para <b>Mafalda</b> com atributos e parâmetros específicos
      * @param nome
      * @param profissao
      * @param objetivoAtual
      */
     public Mafalda(String nome, Profissao profissao, Objetivo objetivoAtual) {
         super(nome);
-        this.profissao = profissao;
         this.estatuto = 0;
         this.saude = 0;
         this.humor = 0;
@@ -79,7 +77,6 @@ public class Mafalda extends Pessoa {
      */
     public void exibirDetalhes() {
         System.out.println("Nome: " + this.getNome());
-        System.out.println("Profissão: " + profissao);
         System.out.println("Objetivo atual: " + objetivoAtual);
         calcularEstatuto();
         System.out.println("********************************");

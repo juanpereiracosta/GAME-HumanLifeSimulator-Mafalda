@@ -13,14 +13,16 @@ public class Main {
         Profissao profissao = new Profissao("Garçonete", 10.00, false);
         Mafalda mafalda = new Mafalda("Mafalda", profissao, Objetivo.COMPRAR_SAXOFONE);
 
-        // O parâmetro "mafalda" é utilizado para inicializar o atributo mafalda dentro da classe SaudeManager
-        // Já que no construtor, o parâmetro foi definido para ter um objeto do tipo Mafalda
+        // O parâmetro "mafalda" é utilizado para inicializar o atributo mafalda dentro de cada classe
+        // No construtor, o parâmetro foi definido para ser um objeto do tipo Mafalda
         SaudeComportamentos saudeComportamentos = new SaudeComportamentos(mafalda);
         HumorComportamentos humorComportamentos = new HumorComportamentos(mafalda);
         HabilidadeComportamentos habilidadeComportamentos = new HabilidadeComportamentos(mafalda);
         DinheiroComportamentos dinheiroComportamentos = new DinheiroComportamentos(mafalda);
-        Sims sims  = new Sims();
-        /*mafalda.exibirDetalhes();
+        Sims sims = new Sims(mafalda);
+
+        /*
+        mafalda.exibirDetalhes();
         saudeComportamentos.andarDeBike();
         mafalda.exibirDetalhes();
         humorComportamentos.beberTacaDeVinho();
@@ -28,9 +30,11 @@ public class Main {
         dinheiroComportamentos.discotecar();
         mafalda.exibirDetalhes();
         habilidadeComportamentos.praticar();
-        mafalda.exibirDetalhes();*/
+        mafalda.exibirDetalhes();
+        */
 
         sims.jogo();
+
 
     }
 }
