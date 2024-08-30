@@ -1,15 +1,18 @@
 package Main;
 
 import Objetivo.Objetivo;
-import Pessoa.Mafalda;
+import Pessoa.Jogador;
 import Profissao.Profissao;
 import Sims.*;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        // Objetos
+        Scanner scanner = new Scanner(System.in);
+/*
+       // Objetos
         Profissao profissao = new Profissao("Garçonete", 10.00, false);
         Mafalda mafalda = new Mafalda("Mafalda", profissao, Objetivo.COMPRAR_SAXOFONE);
 
@@ -18,23 +21,13 @@ public class Main {
         SaudeComportamentos saudeComportamentos = new SaudeComportamentos(mafalda);
         HumorComportamentos humorComportamentos = new HumorComportamentos(mafalda);
         HabilidadeComportamentos habilidadeComportamentos = new HabilidadeComportamentos(mafalda);
-        DinheiroComportamentos dinheiroComportamentos = new DinheiroComportamentos(mafalda);
+        DinheiroComportamentos dinheiroComportamentos = new DinheiroComportamentos(mafalda);*/
+        Profissao profissao = new Profissao("Garçonete", 10.00, false);
+
+        Jogador mafalda = new Jogador("Mafalda", profissao, Objetivo.COMPRAR_SAXOFONE);
         Sims sims = new Sims(mafalda);
 
-        /*
-        mafalda.exibirDetalhes();
-        saudeComportamentos.andarDeBike();
-        mafalda.exibirDetalhes();
-        humorComportamentos.beberTacaDeVinho();
-        mafalda.exibirDetalhes();
-        dinheiroComportamentos.discotecar();
-        mafalda.exibirDetalhes();
-        habilidadeComportamentos.praticar();
-        mafalda.exibirDetalhes();
-        */
-
-        sims.jogo();
-
+        sims.listarProfissoes();
 
     }
 }

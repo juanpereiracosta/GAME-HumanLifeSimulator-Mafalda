@@ -1,12 +1,12 @@
 package Sims;
 
-import Pessoa.Mafalda;
+import Pessoa.Jogador;
 
 public class DinheiroComportamentos {
 
-    private Mafalda mafalda;
+    private Jogador mafalda;
 
-    public DinheiroComportamentos(Mafalda mafalda) {
+    public DinheiroComportamentos(Jogador mafalda) {
         this.mafalda = mafalda;
     }
 

@@ -12,11 +12,14 @@ public class Profissao {
      * @param salarioHora
      * @param formal
      */
-
     public Profissao(String nome, double salarioHora, boolean formal) {
         this.nome = nome;
         this.salarioHora = salarioHora;
         this.formal = formal;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     /**
@@ -33,5 +36,4 @@ public class Profissao {
         }
         return nome + " | Salário por hora: €" + salarioHora + " | Formal: " + varFormal;
     }
-
 }

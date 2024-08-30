@@ -3,7 +3,7 @@ package Pessoa;
 import Objetivo.Objetivo;
 import Profissao.Profissao;
 
-public class Mafalda extends Pessoa {
+public class Jogador extends Pessoa {
 
 
     private Objetivo objetivoAtual;
@@ -13,10 +13,10 @@ public class Mafalda extends Pessoa {
     private int dinheiro;
 
     /**
-     * Método construtor para <b>Mafalda</b> com atributo e parãmetro da superclasse <b>Pessoa</b>
+     * Método construtor para <b>Mafalda</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
      * @param nome
      */
-    public Mafalda(String nome) {
+    public Jogador(String nome) {
         super(nome);
     }
 
@@ -26,7 +26,7 @@ public class Mafalda extends Pessoa {
      * @param profissao
      * @param objetivoAtual
      */
-    public Mafalda(String nome, Profissao profissao, Objetivo objetivoAtual) {
+    public Jogador(String nome, Profissao profissao, Objetivo objetivoAtual) {
         super(nome);
         this.estatuto = 0;
         this.saude = 0;
@@ -71,6 +71,7 @@ public class Mafalda extends Pessoa {
     public void setDinheiro(int dinheiro) {
         this.dinheiro = dinheiro;
     }
+
 
     /**
      * Método que exibe os detalhes de <b>Mafalda</b> e <b>Profissao</b>
