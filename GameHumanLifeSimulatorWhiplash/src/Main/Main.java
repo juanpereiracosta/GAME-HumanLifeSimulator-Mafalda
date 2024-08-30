@@ -27,7 +27,10 @@ public class Main {
         Jogador mafalda = new Jogador("Mafalda", profissao, Objetivo.COMPRAR_SAXOFONE);
         Sims sims = new Sims(mafalda);
 
-        sims.listarProfissoes();
+        sims.introJogo();
+
+
+
 
     }
 }

@@ -14,6 +14,11 @@ public class Sims {
     private Eventos eventos;
     private ArrayList<Profissao> profissoesDisponiveis;
 
+    public void enter() {
+        System.out.println("\n");
+        System.out.println("Enter...");
+    }
+
     /**
      * Método construtor para <b>Sims</b>
      * @param mafalda
@@ -38,27 +43,61 @@ public class Sims {
         profissoesDisponiveis.add(new Profissao("Atendente de mesa", 10, false));
         profissoesDisponiveis.add(new Profissao("Atendente de livraria", 10, false));
         profissoesDisponiveis.add(new Profissao("Guia de turismo", 10, false));
-        profissoesDisponiveis.add(new Profissao("Babysitter", 10, false));
+        profissoesDisponiveis.add(new Profissao("Dogwalker", 10, false));
         int index = 1;
         for (Profissao profissaoDisponivel : profissoesDisponiveis) {
-            System.out.println(index + " " + profissaoDisponivel.getNome());
+            System.out.println("[" + index + "] " + profissaoDisponivel);
             index++;
         }
     }
-
+    // Variável fora de métodos específicos para poder ser utilizada em mais de um método
+    String nomePersonagemPrincipal = scanner.nextLine();
     public void criarPessoa() {
-        System.out.println("Qual será o nome da pessoa?");
-        String nomePessoa = scanner.nextLine();
-        System.out.println("Legal. Agora escolha uma profissão para " + nomePessoa);
-        System.out.println("Lembrando que ela tem o sonho e objetivo de viver da música, mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso.");
-        System.out.println("Pensando nisto, escolha uma profissão:");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Qual será o nome dela?");
+        System.out.print("Responda aqui: ");
+
+        // Novo objeto Jogador usando o nome fornecido pelo usuário
+        jogador = new Jogador(nomePersonagemPrincipal);
+
+        System.out.println("Legal. Agora escolha uma profissão para " + nomePersonagemPrincipal + ".");
+        System.out.println("Lembrando que " + nomePersonagemPrincipal + " tem o sonho e objetivo de viver da música, mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso.");
+        System.out.println("Pensando nisto, escolha uma profissão digitando o número correspondente:");
+
         listarProfissoes();
+
+        int profissaoEscolhidaIndex = scanner.nextInt();
+        Profissao profissaoEscolhida;
+
+        switch (profissaoEscolhidaIndex) {
+            case 1:
+                profissaoEscolhida = profissoesDisponiveis.get(0);
+                break;
+            case 2:
+                profissaoEscolhida = profissoesDisponiveis.get(1);
+                break;
+            case 3:
+                profissaoEscolhida = profissoesDisponiveis.get(2);
+                break;
+            case 4:
+                profissaoEscolhida = profissoesDisponiveis.get(3);
+                break;
+            default:
+                System.out.println("Escolha inválida. Por favor, escolha um número de 1 a 4");
+                return;
+        }
+        System.out.println("Você escolheu a profissão: " + profissaoEscolhida);
+        scanner.close();
     }
 
    public void introJogo() {
        System.out.println("*** Whiplash ***");
+       System.out.println("\n");
+       System.out.println("Pressione enter para continuar...");
        limparTela();
        System.out.println("Boas-Vindas!");
+       enter();
        limparTela();
        System.out.println("Whiplash é um jogo em que o sucesso de uma pessoa na música depende de você!");
        limparTela();
@@ -70,36 +109,36 @@ public class Sims {
        System.out.println("3 - Entrar para um grupo de jazz");
        System.out.println("4 - Tocar na Casa da Música com seu novo grupo");
        limparTela();
-       System.out.println("Você terá um mês para cumprir cada objetivo, tomando decisões diárias que irão impactar:");
-       limparTela();
+       System.out.println("Você terá um mês para cumprir cada objetivo, tomando decisões diárias que irão impactar em:");
        System.out.println("Saúde");
        System.out.println("Humor");
        System.out.println("Habilidade");
        System.out.println("Dinheiro");
        limparTela();
-       System.out.println("O seu estatuto será gerado a partir de uma média desses quatro itens");
-       System.out.println("Para cumprir cada objetivo, você deve ter um estatuto acima de 150");
+       System.out.println("O seu estatuto será gerado a partir de uma média desses quatro itens.");
+       System.out.println("Para cumprir cada objetivo, você deverá ter um estatuto acima de 150.");
        limparTela();
-       System.out.println("Portanto, pense bem antes de cada decisão!");
+       System.out.println("Portanto, pense bem antes de cada decisão, ok?");
        limparTela();
        System.out.println("Imagine que algo pode render mais dinheiro, mas debilitar a saúde.");
        System.out.println("Ou uma decisão é capaz de melhorar o humor, mas o custo pode ser alto.");
        System.out.println("Ou, ainda, o humor pode melhorar, o dinheiro aumentar, mas a habilidade musical diminuir.");
        limparTela();
-       System.out.println("Já deu para entender que cada decisão é muito importante, certo?!");
+       System.out.println("Já deu para perceber que cada decisão é muito importante, não é mesmo?");
+       limparTela();
        System.out.println("Então, é hora de jogar!");
        limparTela();
        System.out.println("Antes de tudo, vamos criar a nossa pessoa musicista.");
-        criarPessoa();  // Método para criar o jogador principal
-
-        System.out.println("Ótimo! Agora você precisa criar um professor para " + jogador.getNome());
+       limparTela();
+       criarPessoa();
+       System.out.println("Ótimo! Agora você precisa criar um professor para " + nomePersonagemPrincipal + ".");
         //criarNpc("Professor");  // Método genérico para criar um NPC, neste caso, o professor
 
-        System.out.println("Legal, agora que " + jogador.getNome() + " tem um professor, crie uma melhor amiga para fazer companhia a " + jogador.getNome() + ".");
+       System.out.println("Legal, agora que " + nomePersonagemPrincipal + " tem um professor, crie uma melhor amiga para fazer companhia a " + jogador.getNome() + ".");
         //criarNpc("Amiga");  // Método genérico para criar um NPC, neste caso, a amiga
 
-        System.out.println("Legal, agora é hora de tomar decisões ao longo de 4 meses, tendo um mês para cumprir cada objetivo.");
-        jogo();  // Método principal do jogo
+       System.out.println("Legal, agora é hora de tomar decisões ao longo de 4 meses, tendo um mês para cumprir cada objetivo.");
+       //jogo();  // Método principal do jogo
     }
 
     /**
