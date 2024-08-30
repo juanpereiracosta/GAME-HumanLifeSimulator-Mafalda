@@ -1,19 +1,18 @@
 package Pessoa;
 
-import Objetivo.Objetivo;
 import Profissao.Profissao;
 
 public class Jogador extends Pessoa {
 
 
-    private Objetivo objetivoAtual;
+    private String objetivo;
     private int saude;
     private int humor;
     private int habilidade;
     private int dinheiro;
 
     /**
-     * Método construtor para <b>Mafalda</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
+     * Método construtor para <b>Jogador</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
      * @param nome
      */
     public Jogador(String nome) {
@@ -21,19 +20,19 @@ public class Jogador extends Pessoa {
     }
 
     /**
-     * Método construtor para <b>Mafalda</b> com atributos e parâmetros específicos
+     * Método construtor para <b>Jogador</b> com atributos e parâmetros específicos
      * @param nome
      * @param profissao
-     * @param objetivoAtual
+     * @param objetivo
      */
-    public Jogador(String nome, Profissao profissao, Objetivo objetivoAtual) {
+    public Jogador(String nome, Profissao profissao, String objetivo) {
         super(nome);
         this.estatuto = 0;
         this.saude = 0;
         this.humor = 0;
         this.habilidade = 0;
         this.dinheiro = 0;
-        this.objetivoAtual = objetivoAtual;
+        this.objetivo = objetivo;
     }
 
     public int getEstatuto() {
@@ -72,16 +71,9 @@ public class Jogador extends Pessoa {
         this.dinheiro = dinheiro;
     }
 
-
-    /**
-     * Método que exibe os detalhes de <b>Mafalda</b> e <b>Profissao</b>
-     */
-    public void exibirDetalhes() {
-        System.out.println("Nome: " + this.getNome());
-        System.out.println("Objetivo atual: " + objetivoAtual);
-        calcularEstatuto();
-        System.out.println("********************************");
-        System.out.println();
+    public String setObjetivo(String objetivo) {
+        this.objetivo = objetivo;
+        return objetivo;
     }
 
     public void calcularEstatuto() {
