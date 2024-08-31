@@ -4,49 +4,41 @@ import Pessoa.Jogador;
 
 public class HabilidadeComportamentos {
 
-    private Jogador mafalda;
+    private Jogador jogador;
 
-    public HabilidadeComportamentos(Jogador mafalda) {
-        this.mafalda = mafalda;
+    public HabilidadeComportamentos(Jogador jogador) {
+        this.jogador = jogador;
     }
 
     public void praticar() {
-        mafalda.setSaude(mafalda.getSaude() + 10);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 10);
-        mafalda.setHumor(mafalda.getHumor() + 20);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 150);
-        mafalda.calcularEstatuto();
+        jogador.setSaude(jogador.getSaude() + 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 10);
+        jogador.setHumor(jogador.getHumor() + 20);
+        jogador.setHabilidade(jogador.getHabilidade() + 150);
+        jogador.calcularEstatuto();
     }
 
     public void praticarEmExcesso() {
-        mafalda.setSaude(mafalda.getSaude() - 60);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 20);
-        mafalda.setHumor(mafalda.getHumor() - 20);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 180);
-        mafalda.calcularEstatuto();
+        jogador.setSaude(jogador.getSaude() - 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 20);
+        jogador.setHumor(jogador.getHumor() - 10);
+        jogador.setHabilidade(jogador.getHabilidade() + 200);
+        jogador.calcularEstatuto();
     }
 
-    public void ensaiar() {
-        mafalda.setSaude(mafalda.getSaude() + 10);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 10);
-        mafalda.setHumor(mafalda.getHumor() + 10);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 180);
-        mafalda.calcularEstatuto();
+    public void ouvirVinilDeJazz() {
+        jogador.setSaude(jogador.getSaude() + 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 10);
+        jogador.setHumor(jogador.getHumor() + 10);
+        jogador.setHabilidade(jogador.getHabilidade() + 100);
+        jogador.calcularEstatuto();
     }
 
-    public void ensaiarEmExcesso() {
-        mafalda.setSaude(mafalda.getSaude() - 40);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 20);
-        mafalda.setHumor(mafalda.getHumor() - 20);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 190);
-        mafalda.calcularEstatuto();
-    }
-
-    public void terAulaComFletcher() {
-        mafalda.setSaude(mafalda.getSaude() - 10);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 60);
-        mafalda.setHumor(mafalda.getHumor() + 10);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 190);
-        mafalda.calcularEstatuto();
+    public void terAula() {
+        jogador.setSaude(jogador.getSaude() - 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 60);
+        jogador.setHumor(jogador.getHumor() + 10);
+        jogador.setHabilidade(jogador.getHabilidade() + 190);
+        jogador.calcularEstatuto();
     }
 }

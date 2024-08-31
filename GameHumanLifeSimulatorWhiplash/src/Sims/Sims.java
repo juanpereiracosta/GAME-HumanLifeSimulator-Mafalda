@@ -28,11 +28,6 @@ public class Sims {
         instrumentosMusicais = new ArrayList<>();
     }
 
-    public void enter() {
-        System.out.println("\n");
-        System.out.println("Enter...");
-    }
-
     public void limparTela() {
         scanner.nextLine();  // Aguarda o usuário pressionar Enter
         System.out.print("\033[H\033[2J");
@@ -40,7 +35,6 @@ public class Sims {
     }
 
     public void listarProfissoes() {
-
         profissoesDisponiveis.add(new Profissao("Atendente de mesa", 10, false));
         profissoesDisponiveis.add(new Profissao("Atendente de livraria", 10, false));
         profissoesDisponiveis.add(new Profissao("Guia de turismo", 10, false));
@@ -53,10 +47,10 @@ public class Sims {
     }
 
     public void listarInstrumentos() {
-        instrumentosMusicais.add("Safoxone");
-        instrumentosMusicais.add("Piano");
-        instrumentosMusicais.add("Trompete");
-        instrumentosMusicais.add("Bateria");
+        instrumentosMusicais.add("safoxone");
+        instrumentosMusicais.add("piano");
+        instrumentosMusicais.add("trompete");
+        instrumentosMusicais.add("bateria");
         int index = 1;
         for (String instrumentoMusical : instrumentosMusicais) {
             System.out.println("[" + index + "] " + instrumentoMusical);
@@ -75,15 +69,17 @@ public class Sims {
      // Instância única de Scanner
 
     public void criarPessoa() {
-        System.out.println("Qual será o nome dela?");
-        System.out.print("Responda aqui: ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Escolha um nome: ");
         nomePersonagemPrincipal = scanner.nextLine();  // Lê o nome fornecido pelo usuário
 
         // Novo objeto Jogador usando o nome fornecido pelo usuário
         jogador = new Jogador(nomePersonagemPrincipal);
 
-        System.out.println("Chegou a hora de escolher uma profissão para " + nomePersonagemPrincipal + ".");
-        System.out.println("Lembrando que " + nomePersonagemPrincipal + " tem o sonho e objetivo de viver da música, mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso.");
+        System.out.println("Agora, escolha uma profissão para " + nomePersonagemPrincipal + ".");
+        System.out.println("Lembrando que " + nomePersonagemPrincipal + " tem o sonho e objetivo de viver da música, " +
+                "mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso...");
+        System.out.println();
         System.out.println("Pensando nisto, escolha uma profissão digitando o número correspondente:");
         listarProfissoes();
         int profissaoEscolhidaIndex = scanner.nextInt();
@@ -107,9 +103,8 @@ public class Sims {
                 return;
         }
         System.out.println("Você escolheu a profissão: " + profissaoEscolhida);
-        enter();
         limparTela();
-        System.out.println("Agora escolha qual instrumento seu personagem tocará: ");
+        System.out.println("Chegou a hora de escolher qual instrumento " + nomePersonagemPrincipal + " tocará: ");
         listarInstrumentos();
         int instrumentoEscolhidoIndex = scanner.nextInt();
         scanner.nextLine();
@@ -144,13 +139,14 @@ public class Sims {
         System.out.println("Nome: " + nomePersonagemPrincipal);
         System.out.println("Profissão: " + profissaoEscolhida);
         System.out.println("Objetivo: " + jogador.setObjetivo("Tocar na Casa da Música"));
-        System.out.println("Nome do professor de " + instrumentoEscolhido + ": " + nomeProfessor);
+        System.out.println("Terá aulas de " + instrumentoEscolhido + " com " + nomeProfessor);
         System.out.println("Pessoa favorita no mundo: " + nomeAmigo );
         System.out.println("********************************");
         System.out.println();
     }
 
     public void introJogo() {
+        System.out.println("\n");
         System.out.println("*** Whiplash ***");
         System.out.println("\n");
         System.out.println("Pressione enter para continuar...");
@@ -159,58 +155,65 @@ public class Sims {
         System.out.println();
         System.out.println("Whiplash é um jogo em que o sucesso de uma pessoa na música depende de você...");
         limparTela();
-        System.out.println("Deverá tomar decisões que irão impactar o futuro musical dessa pessoa...");
+        System.out.println("Deverá tomar decisões diárias que irão impactar o futuro musical dessa pessoa...");
         limparTela();
         System.out.println("Estamos falando de alguém que ama jazz e tem um objetivo de vida:");
+        System.out.println();
         System.out.println("***********************");
+        System.out.println();
         System.out.println("Tocar na Casa da Música");
+        System.out.println();
         System.out.println("***********************");
         limparTela();
         System.out.println("Não é um objetivo fácil de se alcançar...");
         limparTela();
         System.out.println("Você terá 100 dias para realizar este objetivo e deverá tomar decisões diárias que irão " +
                 "impactar em quatro fatores:");
+        System.out.println();
         System.out.println("**********");
         System.out.println("Saúde");
         System.out.println("Humor");
         System.out.println("Habilidade");
         System.out.println("Dinheiro");
         System.out.println("**********");
-        enter();
         limparTela();
         System.out.println("O seu estatuto será gerado a partir da média destes quatro fatores.");
+        System.out.println();
         System.out.println("Para cumprir o objetivo, deverá ter um estatuto acima de 150...");
         limparTela();
         System.out.println("Portanto, pense bem antes de cada decisão, ok?");
-        enter();
         limparTela();
         System.out.println("Algo pode render mais dinheiro, mas debilitar a saúde...");
         limparTela();
         System.out.println("Ou melhorar o humor, mas a um custo muito alto...");
         limparTela();
-        System.out.println("Ou ainda aumentar o dinheiro e humor, mas diminuir a habilidade musical...");
+        System.out.println("Ou ainda aumentar o dinheiro e o humor, mas diminuir a habilidade musical...");
         limparTela();
-        System.out.println("Já deu para perceber que cada decisão é muito importante, não é mesmo?!");
-        enter();
+        System.out.println("Já deu para perceber que cada decisão é muito importante, não é mesmo?");
         limparTela();
         System.out.println("Então, é hora de jogar!");
-        enter();
         limparTela();
         System.out.println("Antes de tudo, vamos criar nosso personagem...");
         limparTela();
         criarPessoa();
-        System.out.println("Ótimo! Agora você precisa criar um professor para " + nomePersonagemPrincipal + ".");
+        System.out.println("Ótimo! Agora você precisa criar uma pessoa para dar aulas de " + instrumentoEscolhido +
+                " para " + nomePersonagemPrincipal + ".");
         nomeProfessor = criarNpc();
-        System.out.println("Legal, agora que " + nomePersonagemPrincipal + " terá aulas com " + nomeProfessor + ", crie " +
-                "a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
-        System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca do seu objetivo.");
+        System.out.println("Legal, agora que " + nomePersonagemPrincipal + " terá aulas de " + instrumentoEscolhido +
+                " com " + nomeProfessor + ", crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
+        System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca de seu objetivo.");
         nomeAmigo = criarNpc();
-        System.out.println("Agora " + nomePersonagemPrincipal + " pode contar com " + nomeAmigo);
-        System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação de " + nomeAmigo + ".");
+        System.out.println("Agora " + nomePersonagemPrincipal + " pode contar com o apoio de " + nomeAmigo + "...");
         limparTela();
-        System.out.println("Muito bem, agora é hora de tomar decisões ao longo de 100 dias.");
+        System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação " +
+                "de " + nomeAmigo + "...");
+        limparTela();
+        System.out.println("Muito bem, agora é hora de tomar decisões, divididas em quatro períodos de cada dia, manhã," +
+                " almoço, tarde e noite, ao longo de 100 dias.");
+        limparTela();
         exibirDetalhesPersonagemPrincipal();
-        System.out.println();
+        limparTela();
+        System.out.println("Boa sorte! " + nomePersonagemPrincipal + " conta com você para realizar seu objetivo.");
     }
 
     /**
@@ -218,20 +221,32 @@ public class Sims {
      */
     public void jogo() {
 
-        // Cada ciclo representa um dia, sendo 30 ciclos um mês
-        for (int i = 1; i <= 30 ; i++) {
+        // Cada ciclo representa um dia
+        for (int i = 1; i <= 100 ; i++) {
             System.out.println("Dia " + i + " do mês");
 
             // Array com os quatro períodos do dia
             String[] periodosDoDia = {"manhã", "almoço", "tarde", "noite"};
+
             int periodoIndex = 0;
 
-            while (periodoIndex < periodosDoDia.length) {
+            while (periodoIndex <= periodosDoDia.length) {
                 String periodo = periodosDoDia[periodoIndex];
 
                 System.out.println("Período: " + periodo);
-                // Colocar métodos para o jogador escolher
 
+                // Colocar métodos para o jogador escolher
+                System.out.println("Bom dia!");
+                System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro?");
+
+                System.out.println("[1] Praticar " + instrumentoEscolhido);
+                System.out.println("[2] Ouvir um vinil de jazz");
+                System.out.println("[3] Ter aula");
+                System.out.println("[4] Tomar um café da manhã saudável");
+                System.out.println("[5] Comer uma junkie food");
+                System.out.println("[6] Encontrar " + nomeAmigo);
+                System.out.println("[7] Andar de bicicleta");
+                System.out.println("[8] ");
                 // No 4º dia do mês ou seja, i = 4, Mafalda tem um resfriado
                 if (i == 4 && periodo.equals("manhã")) {
                     eventos.resfriado();

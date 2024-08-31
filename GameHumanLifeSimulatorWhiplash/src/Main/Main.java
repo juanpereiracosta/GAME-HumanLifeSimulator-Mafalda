@@ -12,6 +12,7 @@ public class Main {
         Jogador jogador = new Jogador("jogador");
         Sims sims = new Sims(jogador);
 
-       sims.introJogo();
+       //sims.introJogo();
+       sims.jogo();
     }
 }

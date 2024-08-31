@@ -4,30 +4,37 @@ import Pessoa.Jogador;
 
 public class HumorComportamentos {
 
-    private Jogador mafalda;
+    private Jogador jogador;
 
-    public HumorComportamentos(Jogador mafalda) {
-        this.mafalda = mafalda;
+    public HumorComportamentos(Jogador jogador) {
+        this.jogador = jogador;
     }
 
     public void assistirConcerto() {
-        mafalda.setHumor(mafalda.getHumor() + 70);
-        mafalda.setSaude(mafalda.getSaude() + 30);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 90);
-        mafalda.setHabilidade(mafalda.getHabilidade() + 20);
+        jogador.setHumor(jogador.getHumor() + 70);
+        jogador.setSaude(jogador.getSaude() + 30);
+        jogador.setDinheiro(jogador.getDinheiro() - 90);
+        jogador.setHabilidade(jogador.getHabilidade() + 20);
     }
 
     public void comerJunkieFood() {
-        mafalda.setHumor(mafalda.getHumor() + 120);
-        mafalda.setSaude(mafalda.getSaude() - 50);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 80);
-        mafalda.setHabilidade(mafalda.getHabilidade() - 10);
+        jogador.setHumor(jogador.getHumor() + 120);
+        jogador.setSaude(jogador.getSaude() - 50);
+        jogador.setDinheiro(jogador.getDinheiro() - 80);
+        jogador.setHabilidade(jogador.getHabilidade() - 10);
     }
 
     public void beberTacaDeVinho() {
-        mafalda.setHumor(mafalda.getHumor() + 80);
-        mafalda.setSaude(mafalda.getSaude() - 50);
-        mafalda.setDinheiro(mafalda.getDinheiro() - 50);
-        mafalda.setHabilidade(mafalda.getHabilidade() - 20);
+        jogador.setHumor(jogador.getHumor() + 180);
+        jogador.setSaude(jogador.getSaude() - 50);
+        jogador.setDinheiro(jogador.getDinheiro() - 50);
+        jogador.setHabilidade(jogador.getHabilidade() - 20);
+    }
+
+    public void encontrarPesssoaFavorita() {
+        jogador.setHumor(jogador.getHumor() + 200);
+        jogador.setSaude(jogador.getSaude() + 50);
+        jogador.setDinheiro(jogador.getDinheiro() - 50);
+        jogador.setHabilidade(jogador.getHabilidade() - 30);
     }
 }
