@@ -13,6 +13,7 @@ public class Jogador extends Pessoa {
 
     /**
      * Método construtor para <b>Jogador</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
+     *
      * @param nome
      */
     public Jogador(String nome) {
@@ -21,6 +22,7 @@ public class Jogador extends Pessoa {
 
     /**
      * Método construtor para <b>Jogador</b> com atributos e parâmetros específicos
+     *
      * @param nome
      * @param profissao
      * @param objetivo
@@ -77,8 +79,13 @@ public class Jogador extends Pessoa {
     }
 
     public void calcularEstatuto() {
+        System.out.println("Saúde: " + saude);
+        System.out.println("Humor: " + humor);
+        System.out.println("Dinheiro: " + dinheiro);
+        System.out.println("Habilidade: " + habilidade);
         estatuto = saude + humor + habilidade + dinheiro / 4;
-        System.out.println("Estatuto atual de Mafalda: " + estatuto);
+        System.out.println("**********************");
+        System.out.println("Estatuto atual: " + estatuto);
+        System.out.println("**********************");
     }
 }
-

@@ -35,7 +35,15 @@ public class Eventos {
 
     public void bloqueioCriativo() {
         System.out.println(sims.nomePersonagemPrincipal + " não está com inspiração hoje.");
+        System.out.println("Sua habilidade diminuiu um pouco.");
         System.out.println("Talvez dormir um pouco ou andar de bicicleta possa ajudar.");
-        System.out.println("Fato é que sua habilidade diminuiu um pouco.");
+    }
+
+    public void tocarEmCasamento() {
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setSaude(jogador.getSaude() - 80);
+        jogador.setDinheiro(jogador.getDinheiro() + 200);
+        jogador.setHabilidade(jogador.getHabilidade() + 70);
+        jogador.calcularEstatuto();
     }
 }

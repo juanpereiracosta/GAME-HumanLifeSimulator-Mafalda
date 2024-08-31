@@ -13,6 +13,12 @@ public class Sims {
     private Eventos eventos;
     private ArrayList<Profissao> profissoesDisponiveis;
     private ArrayList<String> instrumentosMusicais;
+    private DinheiroComportamentos dinheiroComportamentos;
+    private HabilidadeComportamentos habilidadeComportamentos;
+    private HumorComportamentos humorComportamentos;
+    private SaudeComportamentos saudeComportamentos;
+
+    Scanner scanner = new Scanner(System.in);
 
     /**
      * Método construtor para <b>Sims</b>
@@ -21,8 +27,13 @@ public class Sims {
     public Sims(Jogador jogador) {
         this.jogador = jogador;
 
-        // A instância de Eventos deve operar sobre a instância específica de Mafalda que foi passada como parâmetro
+        // A instância de Eventos deve operar sobre a instância específica de Jogador que foi passada como parâmetro
         this.eventos = new Eventos(jogador);
+
+        this.habilidadeComportamentos = new HabilidadeComportamentos(jogador);
+        this.dinheiroComportamentos = new DinheiroComportamentos(jogador); // Exemplo de inicialização
+        this.humorComportamentos = new HumorComportamentos(jogador); // Exemplo de inicialização
+        this.saudeComportamentos = new SaudeComportamentos(jogador); // Exemplo de inicialização
 
         profissoesDisponiveis = new ArrayList<>();
         instrumentosMusicais = new ArrayList<>();
@@ -58,7 +69,6 @@ public class Sims {
         }
     }
 
-    private Scanner scanner = new Scanner(System.in);
     // Variáveis fora de métodos específicos para poderem ser utilizadas em mais de um método
     String nomePersonagemPrincipal;
     String nomeProfessor;
@@ -69,9 +79,9 @@ public class Sims {
      // Instância única de Scanner
 
     public void criarPessoa() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Escolha um nome: ");
-        nomePersonagemPrincipal = scanner.nextLine();  // Lê o nome fornecido pelo usuário
+        nomePersonagemPrincipal = scanner.nextLine();
+        System.out.println();
 
         // Novo objeto Jogador usando o nome fornecido pelo usuário
         jogador = new Jogador(nomePersonagemPrincipal);
@@ -82,6 +92,7 @@ public class Sims {
         System.out.println();
         System.out.println("Pensando nisto, escolha uma profissão digitando o número correspondente:");
         listarProfissoes();
+        System.out.print("Digite aqui: ");
         int profissaoEscolhidaIndex = scanner.nextInt();
         scanner.nextLine();
 
@@ -106,6 +117,7 @@ public class Sims {
         limparTela();
         System.out.println("Chegou a hora de escolher qual instrumento " + nomePersonagemPrincipal + " tocará: ");
         listarInstrumentos();
+        System.out.print("Digite aqui: ");
         int instrumentoEscolhidoIndex = scanner.nextInt();
         scanner.nextLine();
         switch (instrumentoEscolhidoIndex) {
@@ -129,8 +141,8 @@ public class Sims {
 
     public String criarNpc() {
         System.out.print("Escolha um nome: ");
-        String nomeNpc = scanner.nextLine();  // Lê o nome fornecido pelo usuário
-        return nomeNpc;  // Retorna o nome para ser armazenado em uma variável específica
+        String nomeNpc = scanner.nextLine();
+        return nomeNpc;
     }
 
     public void exibirDetalhesPersonagemPrincipal() {
@@ -196,9 +208,11 @@ public class Sims {
         System.out.println("Antes de tudo, vamos criar nosso personagem...");
         limparTela();
         criarPessoa();
+        System.out.println();
         System.out.println("Ótimo! Agora você precisa criar uma pessoa para dar aulas de " + instrumentoEscolhido +
                 " para " + nomePersonagemPrincipal + ".");
         nomeProfessor = criarNpc();
+        System.out.println();
         System.out.println("Legal, agora que " + nomePersonagemPrincipal + " terá aulas de " + instrumentoEscolhido +
                 " com " + nomeProfessor + ", crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
         System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca de seu objetivo.");
@@ -210,10 +224,12 @@ public class Sims {
         limparTela();
         System.out.println("Muito bem, agora é hora de tomar decisões, divididas em quatro períodos de cada dia, manhã," +
                 " almoço, tarde e noite, ao longo de 100 dias.");
-        limparTela();
+        System.out.println();
         exibirDetalhesPersonagemPrincipal();
         limparTela();
         System.out.println("Boa sorte! " + nomePersonagemPrincipal + " conta com você para realizar seu objetivo.");
+        System.out.println("********************************");
+        System.out.println();
     }
 
     /**
@@ -223,30 +239,138 @@ public class Sims {
 
         // Cada ciclo representa um dia
         for (int i = 1; i <= 100 ; i++) {
-            System.out.println("Dia " + i + " do mês");
+            System.out.println("**************");
+            System.out.println("Dia " + i);
+            System.out.println("***************");
 
             // Array com os quatro períodos do dia
             String[] periodosDoDia = {"manhã", "almoço", "tarde", "noite"};
 
             int periodoIndex = 0;
 
-            while (periodoIndex <= periodosDoDia.length) {
+            while (periodoIndex < periodosDoDia.length) {
                 String periodo = periodosDoDia[periodoIndex];
 
                 System.out.println("Período: " + periodo);
+                System.out.println("***************");
 
                 // Colocar métodos para o jogador escolher
-                System.out.println("Bom dia!");
-                System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro?");
+                if (periodo.equals("manhã")) {
+                    System.out.println("Bom dia!");
+                    System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro hoje?");
 
-                System.out.println("[1] Praticar " + instrumentoEscolhido);
-                System.out.println("[2] Ouvir um vinil de jazz");
-                System.out.println("[3] Ter aula");
-                System.out.println("[4] Tomar um café da manhã saudável");
-                System.out.println("[5] Comer uma junkie food");
-                System.out.println("[6] Encontrar " + nomeAmigo);
-                System.out.println("[7] Andar de bicicleta");
-                System.out.println("[8] ");
+                    System.out.println("[1] Praticar " + instrumentoEscolhido);
+                    System.out.println("[2] Ouvir um vinil de jazz");
+                    System.out.println("[3] Ter aula");
+                    System.out.println("[4] Tomar um café da manhã saudável");
+                    System.out.println("[5] Comer uma junkie food");
+                    System.out.println("[6] Encontrar " + nomeAmigo);
+                    System.out.println("[7] Andar de bicicleta");
+                    System.out.println("[8] Voltar a dormir");
+                    System.out.println("[9] Tomar uma xícara de café");
+
+                    System.out.print("Responda aqui: ");
+                    int escolhaComportamentoManha = scanner.nextInt();
+
+                    switch (escolhaComportamentoManha) {
+                        case 1:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 2:
+                            habilidadeComportamentos.ouvirVinilDeJazz();
+                    }
+                }
+
+                if (periodo.equals("almoço")) {
+                    System.out.println("Chegou a hora do almoço!");
+                    System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
+
+                    //Colocar métodos do almoço
+                    System.out.println("[1] Comer uma comida saudável" + instrumentoEscolhido);
+                    System.out.println("[2] Ouvir um vinil de jazz");
+                    System.out.println("[3] Ter aula");
+                    System.out.println("[4] Dormir um pouco");
+                    System.out.println("[5] Comer uma junkie food");
+                    System.out.println("[6] Almoçar com " + nomeAmigo);
+                    System.out.println("[7] Andar de bicicleta");
+                    System.out.println("[8] Trabalhar");
+                    System.out.println("[9] Praticar");
+
+                    System.out.print("Responda aqui: ");
+                    int escolhaComportamentoManha = scanner.nextInt();
+
+                    switch (escolhaComportamentoManha) {
+                        case 1:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 2:
+                            habilidadeComportamentos.ouvirVinilDeJazz();
+                    }
+                }
+
+                if (periodo.equals("tarde")) {
+                    System.out.println("Hora de decidir como será a tarde de " + nomePersonagemPrincipal);
+
+                    //Colocar métodos da tarde
+                    System.out.println("[1] Fazer terapia");
+                    System.out.println("[2] Dormir a sesta");
+                    System.out.println("[3] Tomar xícara de café");
+                    System.out.println("[4] Trabalhar");
+                    System.out.println("[5] Comer uma junkie food");
+                    System.out.println("[6] Sair com " + nomeAmigo);
+                    System.out.println("[7] Andar de bicicleta");
+                    System.out.println("[8] Beber taça de vinho");
+                    System.out.println("[9] Praticar" + instrumentoEscolhido);
+                    System.out.println("[10] Praticar em excesso");
+                    System.out.println("[11] Ouvir vinil de Jazz");
+                    System.out.println("[12] Ter aula com " + nomeProfessor);
+
+                    System.out.print("Responda aqui: ");
+                    int escolhaComportamentoManha = scanner.nextInt();
+
+                    switch (escolhaComportamentoManha) {
+                        case 1:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 2:
+                            habilidadeComportamentos.ouvirVinilDeJazz();
+                    }
+                }
+
+                if (periodo.equals("noite")) {
+                    System.out.println("Já é noite!");
+                    System.out.println("O que " + nomePersonagemPrincipal + " fará antes de terminar o dia?");
+
+                    //Colocar métodos da noite
+                    System.out.println("[1] Fazer terapia");
+                    System.out.println("[2] Dormir");
+                    System.out.println("[3] Tomar xícara de café");
+                    System.out.println("[4] Trabalhar");
+                    System.out.println("[5] Fazer hora extra no trabalho");
+                    System.out.println("[6] Tocar em um bar");
+                    System.out.println("[7] Jantar uma junkie food");
+                    System.out.println("[8] Jantar uma comida saudável");
+                    System.out.println("[9] Sair com " + nomeAmigo);
+                    System.out.println("[10] Andar de bicicleta");
+                    System.out.println("[11] Beber taça de vinho");
+                    System.out.println("[12] Praticar" + instrumentoEscolhido);
+                    System.out.println("[13] Praticar em excesso");
+                    System.out.println("[14] Ouvir vinil de Jazz");
+                    System.out.println("[15] Ter aula com " + nomeProfessor);
+                    System.out.println("[16] Assistir a um concerto de jazz");
+
+                    System.out.print("Responda aqui: ");
+                    int escolhaComportamentoManha = scanner.nextInt();
+
+                    switch (escolhaComportamentoManha) {
+                        case 1:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 2:
+                            habilidadeComportamentos.ouvirVinilDeJazz();
+                    }
+                }
+
                 // No 4º dia do mês ou seja, i = 4, Mafalda tem um resfriado
                 if (i == 4 && periodo.equals("manhã")) {
                     eventos.resfriado();

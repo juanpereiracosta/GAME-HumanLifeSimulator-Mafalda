@@ -26,19 +26,11 @@ public class DinheiroComportamentos {
         jogador.calcularEstatuto();
     }
 
-    public void discotecar() {
+    public void tocarEmBar() {
         jogador.setHumor(jogador.getHumor() + 50);
         jogador.setSaude(jogador.getSaude() - 70);
         jogador.setDinheiro(jogador.getDinheiro() + 150);
         jogador.setHabilidade(jogador.getHabilidade() - 30);
-        jogador.calcularEstatuto();
-    }
-
-    public void tocarEmCasamento() {
-        jogador.setHumor(jogador.getHumor() + 50);
-        jogador.setSaude(jogador.getSaude() - 80);
-        jogador.setDinheiro(jogador.getDinheiro() + 200);
-        jogador.setHabilidade(jogador.getHabilidade() + 70);
         jogador.calcularEstatuto();
     }
 }

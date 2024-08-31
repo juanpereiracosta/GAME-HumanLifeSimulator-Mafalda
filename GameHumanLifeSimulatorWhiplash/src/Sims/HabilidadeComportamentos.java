@@ -1,6 +1,9 @@
 package Sims;
 
 import Pessoa.Jogador;
+import Shopping.Vinil;
+
+import java.util.ArrayList;
 
 public class HabilidadeComportamentos {
 
@@ -27,6 +30,19 @@ public class HabilidadeComportamentos {
     }
 
     public void ouvirVinilDeJazz() {
+        ArrayList<Vinil> listaVinis = new ArrayList<>();
+
+        listaVinis.add(Vinil.JOHN_COLTRANE);
+        listaVinis.add(Vinil.MILES_DAVIS);
+        listaVinis.add(Vinil.CHARLIE_PARKER);
+        listaVinis.add(Vinil.BILLIE_HOLIDAY);
+
+        System.out.println("Escolha um vinil para ouvir:");
+
+        for (Vinil vinilLista : listaVinis) {
+            System.out.println(vinilLista.getNome());
+        }
+
         jogador.setSaude(jogador.getSaude() + 10);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 10);
