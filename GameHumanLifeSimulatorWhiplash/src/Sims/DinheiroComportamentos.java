@@ -5,9 +5,11 @@ import Pessoa.Jogador;
 public class DinheiroComportamentos {
 
     private Jogador jogador;
+    private Sims sims;
 
-    public DinheiroComportamentos(Jogador jogador) {
+    public DinheiroComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
+        this.sims = sims;
     }
 
     public void trabalhar() {
@@ -33,4 +35,6 @@ public class DinheiroComportamentos {
         jogador.setHabilidade(jogador.getHabilidade() - 30);
         jogador.calcularEstatuto();
     }
+
+
 }

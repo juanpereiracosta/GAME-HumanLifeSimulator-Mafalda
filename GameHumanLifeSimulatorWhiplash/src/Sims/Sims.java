@@ -30,10 +30,11 @@ public class Sims {
         // A instância de Eventos deve operar sobre a instância específica de Jogador que foi passada como parâmetro
         this.eventos = new Eventos(jogador);
 
-        this.habilidadeComportamentos = new HabilidadeComportamentos(jogador);
-        this.dinheiroComportamentos = new DinheiroComportamentos(jogador); // Exemplo de inicialização
-        this.humorComportamentos = new HumorComportamentos(jogador); // Exemplo de inicialização
-        this.saudeComportamentos = new SaudeComportamentos(jogador); // Exemplo de inicialização
+        // this como parâmetro do tipo Sims parta evitar recursão infinita e conflita entre as instâncias
+        this.habilidadeComportamentos = new HabilidadeComportamentos(jogador, this);
+        this.dinheiroComportamentos = new DinheiroComportamentos(jogador, this); // Exemplo de inicialização
+        this.humorComportamentos = new HumorComportamentos(jogador, this); // Exemplo de inicialização
+        this.saudeComportamentos = new SaudeComportamentos(jogador, this); // Exemplo de inicialização
 
         profissoesDisponiveis = new ArrayList<>();
         instrumentosMusicais = new ArrayList<>();
@@ -260,7 +261,7 @@ public class Sims {
                     System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro hoje?");
 
                     System.out.println("[1] Praticar " + instrumentoEscolhido);
-                    System.out.println("[2] Ouvir um vinil de jazz");
+                    System.out.println("[2] Comprar um vinil de jazz");
                     System.out.println("[3] Ter aula");
                     System.out.println("[4] Tomar um café da manhã saudável");
                     System.out.println("[5] Comer uma junkie food");
@@ -277,7 +278,25 @@ public class Sims {
                             habilidadeComportamentos.praticar();
                             break;
                         case 2:
-                            habilidadeComportamentos.ouvirVinilDeJazz();
+                            habilidadeComportamentos.comprarVinilDeJazz();
+                            break;
+                        case 3:
+                            habilidadeComportamentos.terAula();
+                            break;
+                        case 4:
+                            saudeComportamentos.comerComidaSaudavel();
+                            break;
+                        case 5:
+                            humorComportamentos.comerJunkieFood();
+                            break;
+                        case 6:
+                            humorComportamentos.encontrarPesssoaFavorita();
+                            break;
+                        case 7:
+                            saudeComportamentos.andarDeBike();
+                            break;
+                        case 8:
+                            saudeComportamentos.dormir();
                     }
                 }
 
@@ -304,7 +323,7 @@ public class Sims {
                             habilidadeComportamentos.praticar();
                             break;
                         case 2:
-                            habilidadeComportamentos.ouvirVinilDeJazz();
+                            habilidadeComportamentos.comprarVinilDeJazz();
                     }
                 }
 
@@ -333,7 +352,7 @@ public class Sims {
                             habilidadeComportamentos.praticar();
                             break;
                         case 2:
-                            habilidadeComportamentos.ouvirVinilDeJazz();
+                            habilidadeComportamentos.comprarVinilDeJazz();
                     }
                 }
 
@@ -364,10 +383,10 @@ public class Sims {
 
                     switch (escolhaComportamentoManha) {
                         case 1:
-                            habilidadeComportamentos.praticar();
+                            saudeComportamentos.fazerTerapia();
                             break;
                         case 2:
-                            habilidadeComportamentos.ouvirVinilDeJazz();
+                            habilidadeComportamentos.comprarVinilDeJazz();
                     }
                 }
 

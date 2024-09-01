@@ -5,12 +5,16 @@ import Pessoa.Jogador;
 public class SaudeComportamentos {
 
     private Jogador jogador;
+    private Sims sims;
 
-    public SaudeComportamentos(Jogador jogador) {
+    public SaudeComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
+        this.sims = sims;
     }
 
     public void andarDeBike() {
+        System.out.println("Sentir o ventinho no rosto em cima de uma bicicleta é uma sensação deliciosa.");
+        System.out.println("Certamente um passeio de bike fará muito bem a " + sims.nomePersonagemPrincipal + ".");
         jogador.setSaude(jogador.getSaude() + 120);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 70);
@@ -19,6 +23,8 @@ public class SaudeComportamentos {
     }
 
     public void comerComidaSaudavel() {
+        System.out.println("Uma refeição nutritiva logo cedo pode ajudar " + sims.nomePersonagemPrincipal + " a ter um " +
+                " bom dia pela frente.");
         jogador.setSaude(jogador.getSaude() + 150);
         jogador.setDinheiro(jogador.getDinheiro() - 30);
         jogador.setHumor(jogador.getHumor() + 50);

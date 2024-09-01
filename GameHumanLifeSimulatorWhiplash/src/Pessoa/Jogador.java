@@ -79,6 +79,7 @@ public class Jogador extends Pessoa {
     }
 
     public void calcularEstatuto() {
+        System.out.println("**********************");
         System.out.println("Saúde: " + saude);
         System.out.println("Humor: " + humor);
         System.out.println("Dinheiro: " + dinheiro);

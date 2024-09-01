@@ -5,9 +5,11 @@ import Pessoa.Jogador;
 public class HumorComportamentos {
 
     private Jogador jogador;
+    private Sims sims;
 
-    public HumorComportamentos(Jogador jogador) {
+    public HumorComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
+        this.sims = sims;
     }
 
     public void assistirConcerto() {
@@ -18,6 +20,8 @@ public class HumorComportamentos {
     }
 
     public void comerJunkieFood() {
+        System.out.println("Às vezes, somente uma comida mais pesada para nos animar.");
+        System.out.println("Mas atenção, cuidado com a saúde de " + sims.nomePersonagemPrincipal);
         jogador.setHumor(jogador.getHumor() + 120);
         jogador.setSaude(jogador.getSaude() - 50);
         jogador.setDinheiro(jogador.getDinheiro() - 80);
@@ -32,6 +36,8 @@ public class HumorComportamentos {
     }
 
     public void encontrarPesssoaFavorita() {
+        System.out.println("Encontrar uma pessoa querida sempre melhora nossa saúde e nosso humor.");
+        System.out.println("Por isso, será muito bom para " + sims.nomePersonagemPrincipal + " encontrar " + sims.nomeAmigo + ".          ");
         jogador.setHumor(jogador.getHumor() + 200);
         jogador.setSaude(jogador.getSaude() + 50);
         jogador.setDinheiro(jogador.getDinheiro() - 50);
