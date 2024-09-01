@@ -316,7 +316,7 @@ public class Sims {
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
                     System.out.println("***************");
-                    System.out.println("[1] Comer uma comida saudável" + instrumentoEscolhido);
+                    System.out.println("[1] Comer uma comida saudável");
                     System.out.println("[2] Ouvir um vinil de jazz");
                     System.out.println("[3] Ter aula");
                     System.out.println("[4] Dormir um pouco");
@@ -338,6 +338,24 @@ public class Sims {
                             break;
                         case 3:
                             habilidadeComportamentos.terAula();
+                            break;
+                        case 4:
+                            saudeComportamentos.dormir();
+                            break;
+                        case 5:
+                            humorComportamentos.comerJunkieFood();
+                            break;
+                        case 6:
+                            humorComportamentos.encontrarPesssoaFavorita();
+                            break;
+                        case 7:
+                            saudeComportamentos.andarDeBike();
+                            break;
+                        case 8:
+                            dinheiroComportamentos.trabalhar();
+                            break;
+                        case 9:
+                            habilidadeComportamentos.praticar();
                     }
                 }
 
@@ -363,10 +381,40 @@ public class Sims {
 
                     switch (escolhaComportamentoManha) {
                         case 1:
-                            habilidadeComportamentos.praticar();
+                            saudeComportamentos.fazerTerapia();
                             break;
                         case 2:
-                            habilidadeComportamentos.comprarVinilDeJazz();
+                            saudeComportamentos.dormir();
+                            break;
+                        case 3:
+                            saudeComportamentos.tomarCafe();
+                            break;
+                        case 4:
+                            dinheiroComportamentos.trabalhar();
+                            break;
+                        case 5:
+                            humorComportamentos.comerJunkieFood();
+                            break;
+                        case 6:
+                            humorComportamentos.encontrarPesssoaFavorita();
+                            break;
+                        case 7:
+                            saudeComportamentos.andarDeBike();
+                            break;
+                        case 8:
+                            dinheiroComportamentos.trabalhar();
+                            break;
+                        case 9:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 10:
+                            humorComportamentos.encontrarPesssoaFavorita();
+                            break;
+                        case 11:
+                            saudeComportamentos.andarDeBike();
+                            break;
+                        case 12:
+                            dinheiroComportamentos.trabalhar();
                     }
                 }
 

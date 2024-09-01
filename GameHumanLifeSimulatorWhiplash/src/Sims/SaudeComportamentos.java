@@ -33,6 +33,9 @@ public class SaudeComportamentos {
     }
 
     public void fazerTerapia() {
+        System.out.println("Terapia é muito importante para a saúde e até mesmo para o humor.");
+        System.out.println("Mesmo sendo um bom investimento no autocuidado, preste atenção no dinheiro de " +
+                sims.nomePersonagemPrincipal + ".");
         jogador.setSaude(jogador.getSaude() + 160);
         jogador.setDinheiro(jogador.getDinheiro() - 80);
         jogador.setHumor(jogador.getHumor() + 80);

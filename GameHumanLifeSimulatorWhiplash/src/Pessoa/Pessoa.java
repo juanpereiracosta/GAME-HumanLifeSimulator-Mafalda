@@ -19,4 +19,9 @@ public class Pessoa {
     public String getNome() {
         return nome;
     }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }

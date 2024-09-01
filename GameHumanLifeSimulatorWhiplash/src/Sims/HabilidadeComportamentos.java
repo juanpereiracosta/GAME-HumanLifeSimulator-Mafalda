@@ -10,6 +10,7 @@ public class HabilidadeComportamentos {
 
     private Jogador jogador;
     private Sims sims;
+    private Vinil vinil;
 
     public HabilidadeComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
@@ -102,7 +103,7 @@ public class HabilidadeComportamentos {
         jogador.setDinheiro(jogador.getDinheiro() - 60);
         jogador.setHumor(jogador.getHumor() + 10);
         jogador.setHabilidade(jogador.getHabilidade() + 190);
-        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 20);
         jogador.calcularEstatuto();
     }
 }

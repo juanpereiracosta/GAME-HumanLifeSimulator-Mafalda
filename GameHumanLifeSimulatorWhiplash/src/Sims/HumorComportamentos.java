@@ -38,6 +38,8 @@ public class HumorComportamentos {
     public void encontrarPesssoaFavorita() {
         System.out.println("Encontrar uma pessoa querida sempre melhora nossa saúde e nosso humor.");
         System.out.println("Por isso, será muito bom para " + sims.nomePersonagemPrincipal + " encontrar " + sims.nomeAmigo + ".          ");
+        System.out.println("Lembrando que o estatuto de " + sims.nomeAmigo + " deve estar acima de 150.");
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 20);
         jogador.setHumor(jogador.getHumor() + 200);
         jogador.setSaude(jogador.getSaude() + 50);
         jogador.setDinheiro(jogador.getDinheiro() - 50);
