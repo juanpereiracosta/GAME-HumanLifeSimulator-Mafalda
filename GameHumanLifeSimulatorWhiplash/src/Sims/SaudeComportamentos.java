@@ -41,6 +41,8 @@ public class SaudeComportamentos {
     }
 
     public void dormir() {
+        System.out.println("Dormir é sempre bom para a saúde e ainda melhora o humor.");
+        System.out.println("Apenas tome cuidado para dispor de um tempinho para outras coisas importantes, ok?");
         jogador.setSaude(jogador.getSaude() + 150);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 60);
@@ -49,6 +51,9 @@ public class SaudeComportamentos {
     }
 
     public void tomarCafe() {
+        System.out.println("Nada como um cafezinho para dar aquele up!");
+        System.out.println("Apenas preste atenção para não prejudicar a saúde de " + sims.nomePersonagemPrincipal + ", " +
+                " tudo bem?");
         jogador.setSaude(jogador.getSaude() - 30);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 100);

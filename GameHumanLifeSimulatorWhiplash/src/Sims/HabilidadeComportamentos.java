@@ -91,10 +91,18 @@ public class HabilidadeComportamentos {
     }
 
     public void terAula() {
+        System.out.println("Cada aula de " + sims.instrumentoEscolhido + " com " + sims.nomeProfessor + " é muito " +
+                " importante para que " + sims.nomePersonagemPrincipal + " alcance seu objetivo.");
+        System.out.println("ATENÇÃO: a cada aula que " + sims.nomePersonagemPrincipal + " faz, o estatuto de " +
+                        sims.nomeProfessor + " aumenta.");
+        System.out.println("Preste atenção neste detalhe, pois para alcançar o objetivo de " +
+                sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 150.");
+
         jogador.setSaude(jogador.getSaude() - 10);
         jogador.setDinheiro(jogador.getDinheiro() - 60);
         jogador.setHumor(jogador.getHumor() + 10);
         jogador.setHabilidade(jogador.getHabilidade() + 190);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         jogador.calcularEstatuto();
     }
 }

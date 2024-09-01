@@ -72,8 +72,8 @@ public class Sims {
 
     // Variáveis fora de métodos específicos para poderem ser utilizadas em mais de um método
     String nomePersonagemPrincipal;
-    String nomeProfessor;
-    String nomeAmigo;
+    Npc nomeProfessor;
+    Npc nomeAmigo;
     Profissao profissaoEscolhida;
     String instrumentoEscolhido;
 
@@ -140,10 +140,10 @@ public class Sims {
         }
     }
 
-    public String criarNpc() {
+    public Npc criarNpc() {
         System.out.print("Escolha um nome: ");
         String nomeNpc = scanner.nextLine();
-        return nomeNpc;
+        return new Npc(nomeNpc);
     }
 
     public void exibirDetalhesPersonagemPrincipal() {
@@ -214,16 +214,25 @@ public class Sims {
                 " para " + nomePersonagemPrincipal + ".");
         nomeProfessor = criarNpc();
         System.out.println();
-        System.out.println("Legal, agora que " + nomePersonagemPrincipal + " terá aulas de " + instrumentoEscolhido +
-                " com " + nomeProfessor + ", crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
+        System.out.println("Legal, então " + nomePersonagemPrincipal + " terá aulas de " + instrumentoEscolhido +
+                " com " + nomeProfessor + "." );
+        System.out.println("Alguns comportamentos de " + nomePersonagemPrincipal + " irão interferir no " +
+                " estatuto de " + nomeProfessor + ".");
+        System.out.println("Por isso, preste atenção neste detalhe, pois para que " + nomePersonagemPrincipal + " cumpra seu " +
+                " objetivo, " + nomeProfessor + " precisa ter um estatuto acima de 150.");
+        limparTela();
+        System.out.println("Agora, crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
         System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca de seu objetivo.");
         nomeAmigo = criarNpc();
-        System.out.println("Agora " + nomePersonagemPrincipal + " pode contar com o apoio de " + nomeAmigo + "...");
+        System.out.println("Daqui em diante, " + nomePersonagemPrincipal + " poderá contar com o apoio de " + nomeAmigo + "...");
         limparTela();
         System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação " +
                 "de " + nomeAmigo + "...");
         limparTela();
-        System.out.println("Muito bem, agora é hora de tomar decisões, divididas em quatro períodos de cada dia, manhã," +
+        System.out.println("Desta forma, para que " + nomePersonagemPrincipal + " cumpra seu objetivo, o estatuto de "
+        + nomeAmigo + " também deve estar acima de 150.");
+        limparTela();
+        System.out.println("Tudo pronto! Agora é hora de tomar decisões, divididas em quatro períodos de cada dia, manhã," +
                 " almoço, tarde e noite, ao longo de 100 dias.");
         System.out.println();
         exibirDetalhesPersonagemPrincipal();
@@ -259,7 +268,7 @@ public class Sims {
                 if (periodo.equals("manhã")) {
                     System.out.println("Bom dia!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro hoje?");
-
+                    System.out.println("***************");
                     System.out.println("[1] Praticar " + instrumentoEscolhido);
                     System.out.println("[2] Comprar um vinil de jazz");
                     System.out.println("[3] Ter aula");
@@ -269,7 +278,7 @@ public class Sims {
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Voltar a dormir");
                     System.out.println("[9] Tomar uma xícara de café");
-
+                    System.out.println("***************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
 
@@ -297,14 +306,16 @@ public class Sims {
                             break;
                         case 8:
                             saudeComportamentos.dormir();
+                            break;
+                        case 9:
+                            saudeComportamentos.tomarCafe();
                     }
                 }
 
                 if (periodo.equals("almoço")) {
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
-
-                    //Colocar métodos do almoço
+                    System.out.println("***************");
                     System.out.println("[1] Comer uma comida saudável" + instrumentoEscolhido);
                     System.out.println("[2] Ouvir um vinil de jazz");
                     System.out.println("[3] Ter aula");
@@ -314,7 +325,7 @@ public class Sims {
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Trabalhar");
                     System.out.println("[9] Praticar");
-
+                    System.out.println("***************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
 
@@ -324,6 +335,9 @@ public class Sims {
                             break;
                         case 2:
                             habilidadeComportamentos.comprarVinilDeJazz();
+                            break;
+                        case 3:
+                            habilidadeComportamentos.terAula();
                     }
                 }
 
