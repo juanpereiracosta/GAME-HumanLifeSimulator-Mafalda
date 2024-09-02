@@ -5,6 +5,7 @@ import Shopping.Vinho;
 import Shopping.Vinil;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class HumorComportamentos {
 
@@ -15,6 +16,8 @@ public class HumorComportamentos {
         this.jogador = jogador;
         this.sims = sims;
     }
+
+    Scanner scanner = new Scanner(System.in);
 
     public void assistirConcerto() {
         jogador.setHumor(jogador.getHumor() + 70);
@@ -40,7 +43,7 @@ public class HumorComportamentos {
         listaVinhos.add(Vinho.VINHO_TINTO);
         listaVinhos.add(Vinho.VINHO_ROSE);
 
-        System.out.println("Escolha um vinil para comprar:");
+        System.out.println("Escolha um vinho para comprar:");
 
         int index = 1;
         for (Vinho vinho : listaVinhos) {
@@ -49,7 +52,7 @@ public class HumorComportamentos {
         }
 
         // Scanner para ler a entrada do usuário
-        System.out.print("Digite o número do vinil que deseja comprar: ");
+        System.out.print("Digite o número do vinho que deseja comprar: ");
         int escolha = scanner.nextInt();
 
         // Variável para armazenar o vinil escolhido pelo jogador
