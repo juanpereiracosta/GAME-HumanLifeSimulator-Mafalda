@@ -1,6 +1,10 @@
 package Sims;
 
 import Pessoa.Jogador;
+import Shopping.Vinho;
+import Shopping.Vinil;
+
+import java.util.ArrayList;
 
 public class HumorComportamentos {
 
@@ -28,7 +32,54 @@ public class HumorComportamentos {
         jogador.setHabilidade(jogador.getHabilidade() - 10);
     }
 
-    public void beberTacaDeVinho() {
+    public void comprarVinho() {
+        ArrayList<Vinho> listaVinhos = new ArrayList<>();
+
+        listaVinhos.add(Vinho.VINHO_VERDE);
+        listaVinhos.add(Vinho.VINHO_BRANCO);
+        listaVinhos.add(Vinho.VINHO_TINTO);
+        listaVinhos.add(Vinho.VINHO_ROSE);
+
+        System.out.println("Escolha um vinil para comprar:");
+
+        int index = 1;
+        for (Vinho vinho : listaVinhos) {
+            System.out.println("[" + index + "] " + vinho);
+            index++;
+        }
+
+        // Scanner para ler a entrada do usuário
+        System.out.print("Digite o número do vinil que deseja comprar: ");
+        int escolha = scanner.nextInt();
+
+        // Variável para armazenar o vinil escolhido pelo jogador
+        Vinil vinilEscolhido = null;
+
+        switch (escolha) {
+            case 1:
+                vinilEscolhido = Vinil.JOHN_COLTRANE;
+                break;
+            case 2:
+                vinilEscolhido = Vinil.MILES_DAVIS;
+                break;
+            case 3:
+                vinilEscolhido = Vinil.CHARLIE_PARKER;
+                break;
+            case 4:
+                vinilEscolhido = Vinil.BILLIE_HOLIDAY;
+                break;
+            default:
+                System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinis.size());
+                return; // Sai do método se a escolha for inválida
+        }
+
+        // Exibe o vinil escolhido
+        if (vinilEscolhido != null) {
+            System.out.println(vinilEscolhido + " é uma ótima escolha!");
+            System.out.println("Certamenmte " + sims.nomePersonagemPrincipal + " fará bom proveito.");
+            System.out.println("Ah, não se esqueça de prestar atenção no seu dinheiro sempre que comprar algo, ok?");
+        }
+
         jogador.setHumor(jogador.getHumor() + 180);
         jogador.setSaude(jogador.getSaude() - 50);
         jogador.setDinheiro(jogador.getDinheiro() - 50);
