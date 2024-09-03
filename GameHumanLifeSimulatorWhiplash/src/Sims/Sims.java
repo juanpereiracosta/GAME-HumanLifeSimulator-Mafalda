@@ -411,10 +411,10 @@ public class Sims {
                             humorComportamentos.encontrarPesssoaFavorita();
                             break;
                         case 11:
-                            saudeComportamentos.andarDeBike();
+                            habilidadeComportamentos.comprarVinilDeJazz();
                             break;
                         case 12:
-                            dinheiroComportamentos.trabalhar();
+                            habilidadeComportamentos.terAula();
                     }
                 }
 
@@ -448,7 +448,19 @@ public class Sims {
                             saudeComportamentos.fazerTerapia();
                             break;
                         case 2:
-                            habilidadeComportamentos.comprarVinilDeJazz();
+                            saudeComportamentos.dormir();
+                            break;
+                        case 3:
+                            saudeComportamentos.tomarCafe();
+                            break;
+                        case 4:
+                            dinheiroComportamentos.trabalhar();
+                            break;
+                        case 5:
+                            dinheiroComportamentos.fazerHoraExtra();
+                            break;
+                        case 6:
+                            dinheiroComportamentos.tocarEmBar();
                     }
                 }
 

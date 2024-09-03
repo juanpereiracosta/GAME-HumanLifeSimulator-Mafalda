@@ -30,10 +30,12 @@ public class DinheiroComportamentos {
     }
 
     public void tocarEmBar() {
-        jogador.setHumor(jogador.getHumor() + 50);
+        System.out.println("Para complementar a renda, é bom que " + sims.nomePersonagemPrincipal + " toque em um bar de " +
+                " vez em quando.");
+        jogador.setHumor(jogador.getHumor() - 50);
         jogador.setSaude(jogador.getSaude() - 70);
         jogador.setDinheiro(jogador.getDinheiro() + 150);
-        jogador.setHabilidade(jogador.getHabilidade() - 30);
+        jogador.setHabilidade(jogador.getHabilidade() + 30);
         jogador.calcularEstatuto();
     }
 

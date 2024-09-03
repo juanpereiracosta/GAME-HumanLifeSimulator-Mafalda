@@ -29,6 +29,9 @@ public class HabilidadeComportamentos {
     }
 
     public void praticarEmExcesso() {
+        System.out.println("No pain, no gain! É preciso muito esforço para tocar " + sims.instrumentoEscolhido + " na" +
+                " Casa da Música.");
+        System.out.println("Mas preste atenção na saúde e dinheiro de " + sims.nomePersonagemPrincipal + ", ok?");
         jogador.setSaude(jogador.getSaude() - 10);
         jogador.setDinheiro(jogador.getDinheiro() - 20);
         jogador.setHumor(jogador.getHumor() - 10);
