@@ -11,9 +11,8 @@ public class Main {
         Profissao profissao = new Profissao("profissao", 10.00, true);
         Jogador jogador = new Jogador("jogador");
         Sims sims = new Sims(jogador);
-        HabilidadeComportamentos habilidadeComportamentos = new HabilidadeComportamentos(jogador, sims);
+        //HabilidadeComportamentos habilidadeComportamentos = new HabilidadeComportamentos(jogador, sims);
         sims.introJogo();
         sims.jogo();
-        habilidadeComportamentos.comprarVinilDeJazz();
     }
 }

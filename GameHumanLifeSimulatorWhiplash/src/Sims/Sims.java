@@ -436,7 +436,7 @@ public class Sims {
                     System.out.println("[11] Beber taça de vinho");
                     System.out.println("[12] Praticar" + instrumentoEscolhido);
                     System.out.println("[13] Praticar em excesso");
-                    System.out.println("[14] Ouvir vinil de Jazz");
+                    System.out.println("[14] Comprar vinil de Jazz");
                     System.out.println("[15] Ter aula com " + nomeProfessor);
                     System.out.println("[16] Assistir a um concerto de jazz");
 
@@ -461,6 +461,36 @@ public class Sims {
                             break;
                         case 6:
                             dinheiroComportamentos.tocarEmBar();
+                            break;
+                        case 7:
+                            humorComportamentos.comerJunkieFood();
+                            break;
+                        case 8:
+                            saudeComportamentos.comerComidaSaudavel();
+                            break;
+                        case 9:
+                            humorComportamentos.encontrarPesssoaFavorita();
+                            break;
+                        case 10:
+                            saudeComportamentos.andarDeBike();
+                            break;
+                        case 11:
+                            humorComportamentos.comprarVinho();
+                            break;
+                        case 12:
+                            habilidadeComportamentos.praticar();
+                            break;
+                        case 13:
+                            habilidadeComportamentos.praticarEmExcesso();
+                            break;
+                        case 14:
+                            habilidadeComportamentos.comprarVinilDeJazz();
+                            break;
+                        case 15:
+                            habilidadeComportamentos.terAula();
+                            break;
+                        case 16:
+                        humorComportamentos.assistirConcerto();
                     }
                 }
 

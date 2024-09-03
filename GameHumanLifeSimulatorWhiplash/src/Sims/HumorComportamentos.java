@@ -20,10 +20,17 @@ public class HumorComportamentos {
     Scanner scanner = new Scanner(System.in);
 
     public void assistirConcerto() {
+        System.out.println("Esse concerto de jazz irá melhorar o humor, a habilidade e até mesmo a " +
+                "saúde de " + sims.nomePersonagemPrincipal + ".");
+        System.out.println("Mas é claro que não saiu de graça.");
+        System.out.println("Pense como um investimento, sem contar que isto também aumenta o estatuto de " +
+                sims.nomeProfessor + ".");
         jogador.setHumor(jogador.getHumor() + 70);
         jogador.setSaude(jogador.getSaude() + 30);
         jogador.setDinheiro(jogador.getDinheiro() - 90);
         jogador.setHabilidade(jogador.getHabilidade() + 20);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 20);
+        jogador.calcularEstatuto();
     }
 
     public void comerJunkieFood() {
