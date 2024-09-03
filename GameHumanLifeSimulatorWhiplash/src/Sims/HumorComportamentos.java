@@ -56,31 +56,31 @@ public class HumorComportamentos {
         int escolha = scanner.nextInt();
 
         // Variável para armazenar o vinil escolhido pelo jogador
-        Vinil vinilEscolhido = null;
+        Vinho vinhoEscolhido = null;
 
         switch (escolha) {
             case 1:
-                vinilEscolhido = Vinil.JOHN_COLTRANE;
+                vinhoEscolhido = Vinho.VINHO_VERDE;
                 break;
             case 2:
-                vinilEscolhido = Vinil.MILES_DAVIS;
+                vinhoEscolhido = Vinho.VINHO_BRANCO;
                 break;
             case 3:
-                vinilEscolhido = Vinil.CHARLIE_PARKER;
+                vinhoEscolhido = Vinho.VINHO_TINTO;
                 break;
             case 4:
-                vinilEscolhido = Vinil.BILLIE_HOLIDAY;
+                vinhoEscolhido = Vinho.VINHO_ROSE;
                 break;
             default:
-                System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinis.size());
+                System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinhos.size());
                 return; // Sai do método se a escolha for inválida
         }
 
         // Exibe o vinil escolhido
-        if (vinilEscolhido != null) {
-            System.out.println(vinilEscolhido + " é uma ótima escolha!");
-            System.out.println("Certamenmte " + sims.nomePersonagemPrincipal + " fará bom proveito.");
-            System.out.println("Ah, não se esqueça de prestar atenção no seu dinheiro sempre que comprar algo, ok?");
+        if (vinhoEscolhido != null) {
+            System.out.println(vinhoEscolhido + " é muito saboroso!");
+            System.out.println("Boa escolha, uma taça de " + vinhoEscolhido + " fará bem a " + sims.nomePersonagemPrincipal + ".");
+            System.out.println("Ah, não se esqueça de sempre prestar atenção no seu dinheiro, ok?");
         }
 
         jogador.setHumor(jogador.getHumor() + 180);

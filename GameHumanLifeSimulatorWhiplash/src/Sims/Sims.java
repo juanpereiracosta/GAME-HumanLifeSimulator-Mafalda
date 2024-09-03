@@ -370,7 +370,7 @@ public class Sims {
                     System.out.println("[5] Comer uma junkie food");
                     System.out.println("[6] Sair com " + nomeAmigo);
                     System.out.println("[7] Andar de bicicleta");
-                    System.out.println("[8] Beber taça de vinho");
+                    System.out.println("[8] Comprar vinho");
                     System.out.println("[9] Praticar" + instrumentoEscolhido);
                     System.out.println("[10] Praticar em excesso");
                     System.out.println("[11] Ouvir vinil de Jazz");
@@ -402,7 +402,7 @@ public class Sims {
                             saudeComportamentos.andarDeBike();
                             break;
                         case 8:
-                            dinheiroComportamentos.trabalhar();
+                            humorComportamentos.comprarVinho();
                             break;
                         case 9:
                             habilidadeComportamentos.praticar();
