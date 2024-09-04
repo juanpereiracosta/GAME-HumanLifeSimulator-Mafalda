@@ -28,7 +28,7 @@ public class Sims {
         this.jogador = jogador;
 
         // A instância de Eventos deve operar sobre a instância específica de Jogador que foi passada como parâmetro
-        this.eventos = new Eventos(jogador);
+        this.eventos = new Eventos(jogador, this);
 
         // this como parâmetro do tipo Sims parta evitar recursão infinita e conflita entre as instâncias
         this.habilidadeComportamentos = new HabilidadeComportamentos(jogador, this);
@@ -44,6 +44,12 @@ public class Sims {
         scanner.nextLine();  // Aguarda o usuário pressionar Enter
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+
+    public void espaco() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     public void listarProfissoes() {
@@ -216,9 +222,9 @@ public class Sims {
         System.out.println();
         System.out.println("Legal, então " + nomePersonagemPrincipal + " terá aulas de " + instrumentoEscolhido +
                 " com " + nomeProfessor + "." );
-        System.out.println("Alguns comportamentos de " + nomePersonagemPrincipal + " irão interferir no " +
+        System.out.println("Alguns comportamentos de " + nomePersonagemPrincipal + " irão interferir no" +
                 " estatuto de " + nomeProfessor + ".");
-        System.out.println("Por isso, preste atenção neste detalhe, pois para que " + nomePersonagemPrincipal + " cumpra seu " +
+        System.out.println("Por isso, preste atenção neste detalhe, pois para que " + nomePersonagemPrincipal + " cumpra seu" +
                 " objetivo, " + nomeProfessor + " precisa ter um estatuto acima de 150.");
         limparTela();
         System.out.println("Agora, crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
@@ -232,13 +238,13 @@ public class Sims {
         System.out.println("Desta forma, para que " + nomePersonagemPrincipal + " cumpra seu objetivo, o estatuto de "
         + nomeAmigo + " também deve estar acima de 150.");
         limparTela();
-        System.out.println("Tudo pronto! Agora é hora de tomar decisões, divididas em quatro períodos de cada dia, manhã," +
-                " almoço, tarde e noite, ao longo de 100 dias.");
+        System.out.println("Tudo pronto! Agora é hora de tomar decisões, divididas em quatro períodos de cada dia, [manhã," +
+                " almoço, tarde e noite], ao longo de 100 dias.");
         System.out.println();
         exibirDetalhesPersonagemPrincipal();
         limparTela();
         System.out.println("Boa sorte! " + nomePersonagemPrincipal + " conta com você para realizar seu objetivo.");
-        System.out.println("********************************");
+        System.out.println("********************************************************");
         System.out.println();
     }
 
@@ -249,6 +255,7 @@ public class Sims {
 
         // Cada ciclo representa um dia
         for (int i = 1; i <= 100 ; i++) {
+            espaco();
             System.out.println("**************");
             System.out.println("Dia " + i);
             System.out.println("***************");
@@ -268,7 +275,7 @@ public class Sims {
                 if (periodo.equals("manhã")) {
                     System.out.println("Bom dia!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro hoje?");
-                    System.out.println("***************");
+                    System.out.println("*****************************");
                     System.out.println("[1] Praticar " + instrumentoEscolhido);
                     System.out.println("[2] Comprar um vinil de jazz");
                     System.out.println("[3] Ter aula");
@@ -313,9 +320,10 @@ public class Sims {
                 }
 
                 if (periodo.equals("almoço")) {
+                    espaco();
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
-                    System.out.println("***************");
+                    System.out.println("************************");
                     System.out.println("[1] Comer uma comida saudável");
                     System.out.println("[2] Ouvir um vinil de jazz");
                     System.out.println("[3] Ter aula");
@@ -360,8 +368,9 @@ public class Sims {
                 }
 
                 if (periodo.equals("tarde")) {
+                    espaco();
                     System.out.println("Hora de decidir como será a tarde de " + nomePersonagemPrincipal);
-
+                    System.out.println("************************");
                     //Colocar métodos da tarde
                     System.out.println("[1] Fazer terapia");
                     System.out.println("[2] Dormir a sesta");
@@ -371,7 +380,7 @@ public class Sims {
                     System.out.println("[6] Sair com " + nomeAmigo);
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Comprar vinho");
-                    System.out.println("[9] Praticar" + instrumentoEscolhido);
+                    System.out.println("[9] Praticar " + instrumentoEscolhido);
                     System.out.println("[10] Praticar em excesso");
                     System.out.println("[11] Ouvir vinil de Jazz");
                     System.out.println("[12] Ter aula com " + nomeProfessor);
@@ -419,9 +428,10 @@ public class Sims {
                 }
 
                 if (periodo.equals("noite")) {
+                    espaco();
                     System.out.println("Já é noite!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará antes de terminar o dia?");
-
+                    System.out.println("************************");
                     //Colocar métodos da noite
                     System.out.println("[1] Fazer terapia");
                     System.out.println("[2] Dormir");
@@ -494,13 +504,13 @@ public class Sims {
                     }
                 }
 
-                // No 4º dia do mês ou seja, i = 4, Mafalda tem um resfriado
-                if (i == 4 && periodo.equals("manhã")) {
+                // No 4º dia do mês, personagem tem um resfriado
+                if (i == 1 && periodo.equals("tarde")) {
                     eventos.resfriado();
                 }
 
-                // No 7º dia do mês ou seja, i = 7, Mafalda cai de bicicleta
-                if (i == 7 && periodo.equals("tarde")) {
+                // No 7º dia do mês ou seja, i = 7, personagem cai de bicicleta
+                if (i == 3 && periodo.equals("tarde")) {
                     eventos.quedaBicicleta();
                 }
                 periodoIndex++;

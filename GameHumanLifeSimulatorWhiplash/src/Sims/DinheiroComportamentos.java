@@ -13,7 +13,8 @@ public class DinheiroComportamentos {
     }
 
     public void trabalhar() {
-        System.out.println("Trabalhar como " + sims.profissaoEscolhida + " não dá muito dinheiro, mas é necessário!");
+        System.out.println("Hora de ganhar um dinheirinho! Afinal, até " + sims.nomePersonagemPrincipal + " alcançar " +
+                "seu objetivo, as contas não serão pagas sozinhas.");
         jogador.setHumor(jogador.getHumor() - 70);
         jogador.setSaude(jogador.getSaude() - 60);
         jogador.setDinheiro(jogador.getDinheiro() + 150);
@@ -40,6 +41,4 @@ public class DinheiroComportamentos {
         jogador.setHabilidade(jogador.getHabilidade() + 30);
         jogador.calcularEstatuto();
     }
-
-
 }

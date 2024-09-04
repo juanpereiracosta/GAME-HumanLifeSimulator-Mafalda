@@ -23,7 +23,7 @@ public class SaudeComportamentos {
     }
 
     public void comerComidaSaudavel() {
-        System.out.println("Uma refeição nutritiva logo cedo pode ajudar " + sims.nomePersonagemPrincipal + " a ter um " +
+        System.out.println("Uma refeição nutritiva logo cedo pode ajudar " + sims.nomePersonagemPrincipal + " a ter um" +
                 " bom dia pela frente.");
         jogador.setSaude(jogador.getSaude() + 150);
         jogador.setDinheiro(jogador.getDinheiro() - 30);
