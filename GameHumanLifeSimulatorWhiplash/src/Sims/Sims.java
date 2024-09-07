@@ -346,7 +346,7 @@ public class Sims {
                     scanner.nextLine();
                     switch (escolhaComportamentoManha) {
                         case 1:
-                            habilidadeComportamentos.praticar();
+                            saudeComportamentos.comerComidaSaudavel();
                             break;
                         case 2:
                             habilidadeComportamentos.comprarVinilDeJazz();
@@ -512,16 +512,84 @@ public class Sims {
                     }
                 }
 
-                // No 4º dia do mês, personagem tem um resfriado
-                if (i == 1 && periodo.equals("tarde")) {
+                // Eventos ao longo da história
+                if (i == 2 && periodo.equals("tarde")) {
                     limparTela();
                     eventos.resfriado();
                 }
 
-                // No 7º dia do mês ou seja, i = 7, personagem cai de bicicleta
-                if (i == 3 && periodo.equals("tarde")) {
+                if (i == 5 && periodo.equals("noite")) {
                     eventos.quedaBicicleta();
                 }
+
+                if (i == 8 && periodo.equals("almoço")) {
+                    eventos.bloqueioCriativo();
+                }
+
+                if (i == 15 && periodo.equals("noite")) {
+                    eventos.insonia();
+                }
+
+                if (i == 22 && periodo.equals("manhã")) {
+                    eventos.tocarEmCasamento();
+                }
+
+                if (i == 29 && periodo.equals("noite")) {
+                    eventos.instrumentoAvariado();
+                }
+
+                if (i == 36 && periodo.equals("tarde")) {
+                    eventos.discussaoComProfessor();
+                }
+
+                if (i == 45 && periodo.equals("tarde")) {
+                    eventos.visitaDaMae();
+                }
+
+                if (i == 45 && periodo.equals("manhã")) {
+                    eventos.discussaoComAmigo();
+                }
+
+                if (i == 51 && periodo.equals("noite")) {
+                    eventos.discussaoComAmigo();
+                }
+
+                if (i == 56 && periodo.equals("tarde")) {
+                    eventos.diaDeSorte();
+                }
+
+                if (i == 63 && periodo.equals("manhã")) {
+                    eventos.insonia();
+                }
+
+                if (i == 69 && periodo.equals("noite")) {
+                    eventos.visitaDaMae();
+                }
+
+                if (i == 72 && periodo.equals("manhã")) {
+                    eventos.quedaBicicleta();
+                }
+
+                if (i == 78 && periodo.equals("tarde")) {
+                    eventos.bloqueioCriativo();
+                }
+
+                if (i == 85 && periodo.equals("noite")) {
+                    eventos.tocarEmCasamento();
+                }
+
+                if (i == 91 && periodo.equals("manhã")) {
+                    eventos.resfriado();
+                }
+
+                if (i == 94 && periodo.equals("manhã")) {
+                    eventos.prendadoAmigo();
+                }
+
+                if (i == 99 && periodo.equals("tarde")) {
+                    eventos.tocarEmCasamento();
+                }
+
                 periodoIndex++;
             }
         }

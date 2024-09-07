@@ -29,9 +29,9 @@ public class HumorComportamentos {
                 sims.nomeProfessor + ".");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() + 70);
-        jogador.setSaude(jogador.getSaude() + 30);
-        jogador.setDinheiro(jogador.getDinheiro() - 90);
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setSaude(jogador.getSaude() + 20);
+        jogador.setDinheiro(jogador.getDinheiro() - 50);
         jogador.setHabilidade(jogador.getHabilidade() + 20);
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
@@ -46,11 +46,9 @@ public class HumorComportamentos {
         System.out.println("Mas tenha cuidado com a saúde de " + sims.nomePersonagemPrincipal + ", ok?");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() + 120);
-        jogador.setSaude(jogador.getSaude() - 50);
-        jogador.setDinheiro(jogador.getDinheiro() - 80);
-        jogador.setHabilidade(jogador.getHabilidade() - 10);
-        jogador.calcularEstatuto();
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setSaude(jogador.getSaude() - 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -106,10 +104,10 @@ public class HumorComportamentos {
         }
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() + 180);
-        jogador.setSaude(jogador.getSaude() - 50);
-        jogador.setDinheiro(jogador.getDinheiro() - 50);
-        jogador.setHabilidade(jogador.getHabilidade() - 20);
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setSaude(jogador.getSaude() + 10);
+        jogador.setDinheiro(jogador.getDinheiro() - 20);
+        jogador.setHabilidade(jogador.getHabilidade() + 20);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -123,11 +121,9 @@ public class HumorComportamentos {
         System.out.println("*****************************");
         System.out.println();
         sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 20);
-        jogador.setHumor(jogador.getHumor() + 200);
-        jogador.setSaude(jogador.getSaude() + 50);
-        jogador.setDinheiro(jogador.getDinheiro() - 50);
-        jogador.setHabilidade(jogador.getHabilidade() - 30);
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 100);
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setSaude(jogador.getSaude() + 20);
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 50);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }

@@ -32,7 +32,6 @@ public class HabilidadeComportamentos {
         jogador.setHumor(jogador.getHumor() + 20);
         jogador.setHabilidade(jogador.getHabilidade() + 150);
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 100);
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -51,7 +50,6 @@ public class HabilidadeComportamentos {
         jogador.setHumor(jogador.getHumor() - 10);
         jogador.setHabilidade(jogador.getHabilidade() + 200);
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 150);
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -115,7 +113,6 @@ public class HabilidadeComportamentos {
         jogador.setHabilidade(jogador.getHabilidade() + 100);
         jogador.calcularEstatuto();
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         sims.estatutoProfessorEAmigo();
     }
 
@@ -130,12 +127,11 @@ public class HabilidadeComportamentos {
                 sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 150.");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setSaude(jogador.getSaude() - 10);
-        jogador.setDinheiro(jogador.getDinheiro() - 60);
-        jogador.setHumor(jogador.getHumor() + 10);
-        jogador.setHabilidade(jogador.getHabilidade() + 190);
-        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 100);
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
+        jogador.setDinheiro(jogador.getDinheiro() - 20);
+        jogador.setHumor(jogador.getHumor() + 30);
+        jogador.setHabilidade(jogador.getHabilidade() + 50);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 }

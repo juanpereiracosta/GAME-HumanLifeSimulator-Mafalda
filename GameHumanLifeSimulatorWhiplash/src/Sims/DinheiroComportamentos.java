@@ -24,6 +24,7 @@ public class DinheiroComportamentos {
         jogador.setDinheiro(jogador.getDinheiro() + 150);
         jogador.setHabilidade(jogador.getHabilidade() - 10);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void fazerHoraExtra() {
@@ -39,6 +40,7 @@ public class DinheiroComportamentos {
         jogador.setDinheiro(jogador.getDinheiro() + 200);
         jogador.setHabilidade(jogador.getHabilidade() - 40);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void tocarEmBar() {
@@ -52,8 +54,9 @@ public class DinheiroComportamentos {
         System.out.println();
         jogador.setHumor(jogador.getHumor() - 50);
         jogador.setSaude(jogador.getSaude() - 70);
-        jogador.setDinheiro(jogador.getDinheiro() + 150);
+        jogador.setDinheiro(jogador.getDinheiro() + 50);
         jogador.setHabilidade(jogador.getHabilidade() + 30);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 }

@@ -24,6 +24,7 @@ public class SaudeComportamentos {
         jogador.setHumor(jogador.getHumor() + 70);
         jogador.setHabilidade(jogador.getHabilidade() - 10);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void comerComidaSaudavel() {
@@ -38,6 +39,7 @@ public class SaudeComportamentos {
         jogador.setHumor(jogador.getHumor() + 50);
         jogador.setHabilidade(jogador.getHabilidade() - 10);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void fazerTerapia() {
@@ -53,13 +55,14 @@ public class SaudeComportamentos {
         jogador.setHumor(jogador.getHumor() + 80);
         jogador.setHabilidade(jogador.getHabilidade() - 10);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void dormir() {
         System.out.println();
         System.out.println("*****************************");
         System.out.println("Dormir é sempre bom para a saúde e ainda melhora o humor.");
-        System.out.println("Apenas tome cuidado para dispor de um tempinho para outras coisas importantes, ok?");
+        System.out.println("Apenas tome cuidado para dispor de um tempinho para outras atividades importantes, ok?");
         System.out.println("*****************************");
         System.out.println();
         jogador.setSaude(jogador.getSaude() + 150);
@@ -67,6 +70,7 @@ public class SaudeComportamentos {
         jogador.setHumor(jogador.getHumor() + 60);
         jogador.setHabilidade(jogador.getHabilidade() - 10);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void tomarCafe() {
@@ -82,5 +86,6 @@ public class SaudeComportamentos {
         jogador.setHumor(jogador.getHumor() + 100);
         jogador.setHabilidade(jogador.getHabilidade() + 20);
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 }
