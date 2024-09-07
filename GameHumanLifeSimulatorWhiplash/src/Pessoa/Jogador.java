@@ -1,6 +1,7 @@
 package Pessoa;
 
 import Profissao.Profissao;
+import Sims.Sims;
 
 public class Jogador extends Pessoa {
 
@@ -10,7 +11,7 @@ public class Jogador extends Pessoa {
     private int humor;
     private int habilidade;
     private int dinheiro;
-
+    private Sims sims;
     /**
      * Método construtor para <b>Jogador</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
      *
@@ -27,7 +28,7 @@ public class Jogador extends Pessoa {
      * @param profissao
      * @param objetivo
      */
-    public Jogador(String nome, Profissao profissao, String objetivo) {
+    public Jogador(String nome, Profissao profissao, String objetivo, Sims sims) {
         super(nome);
         this.estatuto = 0;
         this.saude = 0;
@@ -35,6 +36,7 @@ public class Jogador extends Pessoa {
         this.habilidade = 0;
         this.dinheiro = 0;
         this.objetivo = objetivo;
+        this.sims = sims;
     }
 
     public int getEstatuto() {

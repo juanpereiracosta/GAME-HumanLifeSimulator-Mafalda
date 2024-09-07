@@ -20,26 +20,45 @@ public class HabilidadeComportamentos {
     Scanner scanner = new Scanner(System.in);
 
     public void praticar() {
+        System.out.println();
+        System.out.println("*****************************");
         System.out.println("Muito bem! " + sims.nomePersonagemPrincipal + " só tocará na Casa da Música se praticar muito.");
-        jogador.setSaude(jogador.getSaude() + 10);
+        System.out.println("Além disso, quando " + sims.nomePersonagemPrincipal + " pratica, o estatuto de "
+                + sims.nomeProfessor + " aumenta.");
+        System.out.println("*****************************");
+        System.out.println();
+        jogador.setSaude(jogador.getSaude() + 5);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 20);
         jogador.setHabilidade(jogador.getHabilidade() + 150);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 100);
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void praticarEmExcesso() {
+        System.out.println();
+        System.out.println("*****************************");
         System.out.println("No pain, no gain! É preciso muito esforço para tocar " + sims.instrumentoEscolhido + " na" +
-                " Casa da Música.");
+                " Casa da Música e às vezes praticar excessivamente é preciso.");
+        System.out.println("O estatuto de " + sims.nomeProfessor + " até aumentou com tanto esforço!");
         System.out.println("Mas preste atenção na saúde e dinheiro de " + sims.nomePersonagemPrincipal + ", ok?");
+        System.out.println("*****************************");
+        System.out.println();
         jogador.setSaude(jogador.getSaude() - 10);
         jogador.setDinheiro(jogador.getDinheiro() - 20);
         jogador.setHumor(jogador.getHumor() - 10);
         jogador.setHabilidade(jogador.getHabilidade() + 200);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 150);
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         jogador.calcularEstatuto();
+        sims.estatutoProfessorEAmigo();
     }
 
     public void comprarVinilDeJazz() {
+        System.out.println();
+        System.out.println("*****************************");
         ArrayList<Vinil> listaVinis = new ArrayList<>();
 
         listaVinis.add(Vinil.JOHN_COLTRANE);
@@ -55,11 +74,9 @@ public class HabilidadeComportamentos {
             index++;
         }
 
-        // Scanner para ler a entrada do usuário
         System.out.print("Digite o número do vinil que deseja comprar: ");
         int escolha = scanner.nextInt();
 
-        // Variável para armazenar o vinil escolhido pelo jogador
         Vinil vinilEscolhido = null;
 
         switch (escolha) {
@@ -76,37 +93,49 @@ public class HabilidadeComportamentos {
                 vinilEscolhido = Vinil.BILLIE_HOLIDAY;
                 break;
             default:
+                System.out.println("*****************************");
                 System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinis.size());
                 return; // Sai do método se a escolha for inválida
         }
 
         // Exibe o vinil escolhido
         if (vinilEscolhido != null) {
+            System.out.println("*****************************");
             System.out.println(vinilEscolhido + " é uma ótima escolha!");
             System.out.println("Certamente " + sims.nomePersonagemPrincipal + " fará bom proveito.");
-            System.out.println("Ah, não se esqueça de prestar atenção no seu dinheiro sempre que comprar algo, ok?");
+            System.out.println("Quando " + sims.nomePersonagemPrincipal + " ouve um vinil de jazz e aumenta suas " +
+                    "referências, o estatuto de " + sims.nomeProfessor + " aumenta.");
+            System.out.println("Ah, mas não se esqueça de prestar atenção no dinheiro sempre que comprar algo, ok?");
         }
-
+        System.out.println("*****************************");
+        System.out.println();
         jogador.setSaude(jogador.getSaude() + 10);
         jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 10);
         jogador.setHabilidade(jogador.getHabilidade() + 100);
         jogador.calcularEstatuto();
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
+        sims.estatutoProfessorEAmigo();
     }
 
     public void terAula() {
+        System.out.println();
+        System.out.println("*****************************");
         System.out.println("Cada aula de " + sims.instrumentoEscolhido + " com " + sims.nomeProfessor + " é muito " +
                 " importante para que " + sims.nomePersonagemPrincipal + " alcance seu objetivo.");
-        System.out.println("ATENÇÃO: a cada aula que " + sims.nomePersonagemPrincipal + " faz, o estatuto de " +
+        System.out.println("Sem contar que, a cada aula que " + sims.nomePersonagemPrincipal + " faz, o estatuto de " +
                         sims.nomeProfessor + " aumenta.");
         System.out.println("Preste atenção neste detalhe, pois para alcançar o objetivo de " +
                 sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 150.");
-
+        System.out.println("*****************************");
+        System.out.println();
         jogador.setSaude(jogador.getSaude() - 10);
         jogador.setDinheiro(jogador.getDinheiro() - 60);
         jogador.setHumor(jogador.getHumor() + 10);
         jogador.setHabilidade(jogador.getHabilidade() + 190);
-        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 20);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 100);
+        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto());
         jogador.calcularEstatuto();
     }
 }

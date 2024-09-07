@@ -9,7 +9,7 @@ public class Npc extends Pessoa {
 
     public Npc(String nome) {
         super(nome);
-        this.estatuto = 0; // Inicializa o estatuto
+        this.estatuto = 0;
     }
 
     public int getEstatuto() {

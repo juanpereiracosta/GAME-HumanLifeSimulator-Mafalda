@@ -163,6 +163,12 @@ public class Sims {
         System.out.println("********************************");
     }
 
+    public void estatutoProfessorEAmigo() {
+        System.out.println("Estatuto de " + nomeProfessor + ": " + (nomeProfessor.getEstatuto()));
+        System.out.println("**********************");
+        System.out.println("Estatuto de " + nomeAmigo + ": " + (nomeAmigo.getEstatuto()));
+    }
+
     public void introJogo() {
         System.out.println("\n");
         System.out.println("*** Whiplash ***");
@@ -285,10 +291,10 @@ public class Sims {
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Voltar a dormir");
                     System.out.println("[9] Tomar uma xícara de café");
-                    System.out.println("**********************");
+                    System.out.println("*****************************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
-
+                    scanner.nextLine();
                     switch (escolhaComportamentoManha) {
                         case 1:
                             habilidadeComportamentos.praticar();
@@ -318,13 +324,13 @@ public class Sims {
                             saudeComportamentos.tomarCafe();
                     }
                 }
-                limparTela();
+
                 if (periodo.equals("almoço")) {
                     System.out.println("Período: " + periodo);
                     System.out.println("***************");
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
-                    System.out.println("************************");
+                    System.out.println("*****************************");
                     System.out.println("[1] Comer uma comida saudável");
                     System.out.println("[2] Ouvir um vinil de jazz");
                     System.out.println("[3] Ter aula");
@@ -334,10 +340,10 @@ public class Sims {
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Trabalhar");
                     System.out.println("[9] Praticar");
-                    System.out.println("***************");
+                    System.out.println("*****************************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
-
+                    scanner.nextLine();
                     switch (escolhaComportamentoManha) {
                         case 1:
                             habilidadeComportamentos.praticar();
@@ -371,9 +377,8 @@ public class Sims {
                 if (periodo.equals("tarde")) {
                     System.out.println("Período: " + periodo);
                     System.out.println("***************");
-                    espaco();
                     System.out.println("Hora de decidir como será a tarde de " + nomePersonagemPrincipal);
-                    System.out.println("************************");
+                    System.out.println("*****************************");
                     //Colocar métodos da tarde
                     System.out.println("[1] Fazer terapia");
                     System.out.println("[2] Dormir a sesta");
@@ -387,10 +392,10 @@ public class Sims {
                     System.out.println("[10] Praticar em excesso");
                     System.out.println("[11] Ouvir vinil de Jazz");
                     System.out.println("[12] Ter aula com " + nomeProfessor);
-
+                    System.out.println("*****************************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
-
+                    scanner.nextLine();
                     switch (escolhaComportamentoManha) {
                         case 1:
                             saudeComportamentos.fazerTerapia();
@@ -433,11 +438,9 @@ public class Sims {
                 if (periodo.equals("noite")) {
                     System.out.println("Período: " + periodo);
                     System.out.println("***************");
-                    espaco();
                     System.out.println("Já é noite!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará antes de terminar o dia?");
-                    System.out.println("************************");
-                    //Colocar métodos da noite
+                    System.out.println("*****************************");
                     System.out.println("[1] Fazer terapia");
                     System.out.println("[2] Dormir");
                     System.out.println("[3] Tomar xícara de café");
@@ -449,15 +452,15 @@ public class Sims {
                     System.out.println("[9] Sair com " + nomeAmigo);
                     System.out.println("[10] Andar de bicicleta");
                     System.out.println("[11] Beber taça de vinho");
-                    System.out.println("[12] Praticar" + instrumentoEscolhido);
+                    System.out.println("[12] Praticar " + instrumentoEscolhido);
                     System.out.println("[13] Praticar em excesso");
                     System.out.println("[14] Comprar vinil de Jazz");
                     System.out.println("[15] Ter aula com " + nomeProfessor);
                     System.out.println("[16] Assistir a um concerto de jazz");
-
+                    System.out.println("*****************************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
-
+                    scanner.nextLine();
                     switch (escolhaComportamentoManha) {
                         case 1:
                             saudeComportamentos.fazerTerapia();
@@ -511,6 +514,7 @@ public class Sims {
 
                 // No 4º dia do mês, personagem tem um resfriado
                 if (i == 1 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.resfriado();
                 }
 
