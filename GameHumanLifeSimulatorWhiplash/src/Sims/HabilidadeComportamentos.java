@@ -83,7 +83,7 @@ public class HabilidadeComportamentos {
         // Exibe o vinil escolhido
         if (vinilEscolhido != null) {
             System.out.println(vinilEscolhido + " é uma ótima escolha!");
-            System.out.println("Certamenmte " + sims.nomePersonagemPrincipal + " fará bom proveito.");
+            System.out.println("Certamente " + sims.nomePersonagemPrincipal + " fará bom proveito.");
             System.out.println("Ah, não se esqueça de prestar atenção no seu dinheiro sempre que comprar algo, ok?");
         }
 

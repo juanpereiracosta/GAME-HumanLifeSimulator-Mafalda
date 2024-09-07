@@ -161,7 +161,6 @@ public class Sims {
         System.out.println("Terá aulas de " + instrumentoEscolhido + " com " + nomeProfessor);
         System.out.println("Pessoa favorita no mundo: " + nomeAmigo );
         System.out.println("********************************");
-        System.out.println();
     }
 
     public void introJogo() {
@@ -230,11 +229,11 @@ public class Sims {
         System.out.println("Agora, crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
         System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca de seu objetivo.");
         nomeAmigo = criarNpc();
+        limparTela();
         System.out.println("Daqui em diante, " + nomePersonagemPrincipal + " poderá contar com o apoio de " + nomeAmigo + "...");
         limparTela();
         System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação " +
                 "de " + nomeAmigo + "...");
-        limparTela();
         System.out.println("Desta forma, para que " + nomePersonagemPrincipal + " cumpra seu objetivo, o estatuto de "
         + nomeAmigo + " também deve estar acima de 150.");
         limparTela();
@@ -242,10 +241,12 @@ public class Sims {
                 " almoço, tarde e noite], ao longo de 100 dias.");
         System.out.println();
         exibirDetalhesPersonagemPrincipal();
-        limparTela();
+        System.out.println();
+        System.out.println();
+        System.out.println("********************************************************");
         System.out.println("Boa sorte! " + nomePersonagemPrincipal + " conta com você para realizar seu objetivo.");
         System.out.println("********************************************************");
-        System.out.println();
+        limparTela();
     }
 
     /**
@@ -255,10 +256,9 @@ public class Sims {
 
         // Cada ciclo representa um dia
         for (int i = 1; i <= 100 ; i++) {
-            espaco();
             System.out.println("**************");
             System.out.println("Dia " + i);
-            System.out.println("***************");
+            System.out.println("**************");
 
             // Array com os quatro períodos do dia
             String[] periodosDoDia = {"manhã", "almoço", "tarde", "noite"};
@@ -266,13 +266,13 @@ public class Sims {
             int periodoIndex = 0;
 
             while (periodoIndex < periodosDoDia.length) {
+                limparTela();
                 String periodo = periodosDoDia[periodoIndex];
-
-                System.out.println("Período: " + periodo);
-                System.out.println("***************");
 
                 // Colocar métodos para o jogador escolher
                 if (periodo.equals("manhã")) {
+                    System.out.println("Período: " + periodo);
+                    System.out.println("***************");
                     System.out.println("Bom dia!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará primeiro hoje?");
                     System.out.println("*****************************");
@@ -285,7 +285,7 @@ public class Sims {
                     System.out.println("[7] Andar de bicicleta");
                     System.out.println("[8] Voltar a dormir");
                     System.out.println("[9] Tomar uma xícara de café");
-                    System.out.println("***************");
+                    System.out.println("**********************");
                     System.out.print("Responda aqui: ");
                     int escolhaComportamentoManha = scanner.nextInt();
 
@@ -318,9 +318,10 @@ public class Sims {
                             saudeComportamentos.tomarCafe();
                     }
                 }
-
+                limparTela();
                 if (periodo.equals("almoço")) {
-                    espaco();
+                    System.out.println("Período: " + periodo);
+                    System.out.println("***************");
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
                     System.out.println("************************");
@@ -368,6 +369,8 @@ public class Sims {
                 }
 
                 if (periodo.equals("tarde")) {
+                    System.out.println("Período: " + periodo);
+                    System.out.println("***************");
                     espaco();
                     System.out.println("Hora de decidir como será a tarde de " + nomePersonagemPrincipal);
                     System.out.println("************************");
@@ -428,6 +431,8 @@ public class Sims {
                 }
 
                 if (periodo.equals("noite")) {
+                    System.out.println("Período: " + periodo);
+                    System.out.println("***************");
                     espaco();
                     System.out.println("Já é noite!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará antes de terminar o dia?");
