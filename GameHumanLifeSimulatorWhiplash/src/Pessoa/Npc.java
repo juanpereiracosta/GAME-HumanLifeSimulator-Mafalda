@@ -19,4 +19,8 @@ public class Npc extends Pessoa {
     public void setEstatuto(int estatuto) {
         this.estatuto = estatuto;
     }
+
+    public String getNome() {
+        return super.getNome();
+    }
 }

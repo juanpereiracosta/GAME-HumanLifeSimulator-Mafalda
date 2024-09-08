@@ -83,7 +83,6 @@ public class Sims {
     Profissao profissaoEscolhida;
     String instrumentoEscolhido;
 
-     // Instância única de Scanner
 
     public void criarPessoa() {
         System.out.print("Escolha um nome: ");
@@ -95,7 +94,7 @@ public class Sims {
 
         System.out.println("Agora, escolha uma profissão para " + nomePersonagemPrincipal + ".");
         System.out.println("Lembrando que " + nomePersonagemPrincipal + " tem o sonho e objetivo de viver da música, " +
-                "mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso...");
+                "mas ainda precisa desempenhar funções em outras áreas até alcançar o sucesso.");
         System.out.println();
         System.out.println("Pensando nisto, escolha uma profissão digitando o número correspondente:");
         listarProfissoes();
@@ -203,7 +202,7 @@ public class Sims {
         limparTela();
         System.out.println("O seu estatuto será gerado a partir da média destes quatro fatores.");
         System.out.println();
-        System.out.println("Para cumprir o objetivo, deverá ter um estatuto acima de 150...");
+        System.out.println("Para cumprir o objetivo, deverá ter um estatuto acima de 5500...");
         limparTela();
         System.out.println("Portanto, pense bem antes de cada decisão, ok?");
         limparTela();
@@ -239,12 +238,14 @@ public class Sims {
         System.out.println("Daqui em diante, " + nomePersonagemPrincipal + " poderá contar com o apoio de " + nomeAmigo + "...");
         limparTela();
         System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação " +
-                "de " + nomeAmigo + "...");
+                "de " + nomeAmigo + ".");
         System.out.println("Desta forma, para que " + nomePersonagemPrincipal + " cumpra seu objetivo, o estatuto de "
         + nomeAmigo + " também deve estar acima de 150.");
         limparTela();
+        System.out.println("********************************************************");
         System.out.println("Tudo pronto! Agora é hora de tomar decisões, divididas em quatro períodos de cada dia, [manhã," +
                 " almoço, tarde e noite], ao longo de 100 dias.");
+        System.out.println("********************************************************");
         System.out.println();
         exibirDetalhesPersonagemPrincipal();
         System.out.println();
@@ -331,8 +332,8 @@ public class Sims {
                     System.out.println("Chegou a hora do almoço!");
                     System.out.println("O que " + nomePersonagemPrincipal + " fará agora?");
                     System.out.println("*****************************");
-                    System.out.println("[1] Comer uma comida saudável");
-                    System.out.println("[2] Ouvir um vinil de jazz");
+                    System.out.println("[1] Almoçar uma comida saudável sozinha");
+                    System.out.println("[2] Comprar um vinil de jazz");
                     System.out.println("[3] Ter aula");
                     System.out.println("[4] Dormir um pouco");
                     System.out.println("[5] Comer uma junkie food");
@@ -387,10 +388,10 @@ public class Sims {
                     System.out.println("[5] Comer uma junkie food");
                     System.out.println("[6] Sair com " + nomeAmigo);
                     System.out.println("[7] Andar de bicicleta");
-                    System.out.println("[8] Comprar vinho");
+                    System.out.println("[8] Comprar um vinho");
                     System.out.println("[9] Praticar " + instrumentoEscolhido);
                     System.out.println("[10] Praticar em excesso");
-                    System.out.println("[11] Ouvir vinil de Jazz");
+                    System.out.println("[11] Comprar um vinil de Jazz");
                     System.out.println("[12] Ter aula com " + nomeProfessor);
                     System.out.println("*****************************");
                     System.out.print("Responda aqui: ");
@@ -451,10 +452,10 @@ public class Sims {
                     System.out.println("[8] Jantar uma comida saudável");
                     System.out.println("[9] Sair com " + nomeAmigo);
                     System.out.println("[10] Andar de bicicleta");
-                    System.out.println("[11] Beber taça de vinho");
+                    System.out.println("[11] Comprar um vinho");
                     System.out.println("[12] Praticar " + instrumentoEscolhido);
                     System.out.println("[13] Praticar em excesso");
-                    System.out.println("[14] Comprar vinil de Jazz");
+                    System.out.println("[14] Comprar um vinil de Jazz");
                     System.out.println("[15] Ter aula com " + nomeProfessor);
                     System.out.println("[16] Assistir a um concerto de jazz");
                     System.out.println("*****************************");

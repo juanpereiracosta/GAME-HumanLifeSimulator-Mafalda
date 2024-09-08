@@ -19,10 +19,8 @@ public class DinheiroComportamentos {
                 "seu objetivo, as contas não serão pagas sozinhas.");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() - 70);
-        jogador.setSaude(jogador.getSaude() - 60);
-        jogador.setDinheiro(jogador.getDinheiro() + 150);
-        jogador.setHabilidade(jogador.getHabilidade() - 10);
+        jogador.setHumor(jogador.getHumor() - 30);
+        jogador.setDinheiro(jogador.getDinheiro() + 50);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -35,10 +33,9 @@ public class DinheiroComportamentos {
                 + sims.nomePersonagemPrincipal + " ok?");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() - 80);
-        jogador.setSaude(jogador.getSaude() - 80);
-        jogador.setDinheiro(jogador.getDinheiro() + 200);
-        jogador.setHabilidade(jogador.getHabilidade() - 40);
+        jogador.setHumor(jogador.getHumor() - 20);
+        jogador.setSaude(jogador.getSaude() - 20);
+        jogador.setDinheiro(jogador.getDinheiro() + 60);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -49,13 +46,13 @@ public class DinheiroComportamentos {
         System.out.println("Para complementar a renda, é bom que " + sims.nomePersonagemPrincipal + " toque em um bar de " +
                 " vez em quando.");
         System.out.println("Apenas leve em conta que isso aumenta seu dinheiro e sua habilidade, mas compromete sua saúde" +
-                " e seu humor");
+                " e seu humor.");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setHumor(jogador.getHumor() - 50);
-        jogador.setSaude(jogador.getSaude() - 70);
-        jogador.setDinheiro(jogador.getDinheiro() + 50);
-        jogador.setHabilidade(jogador.getHabilidade() + 30);
+        jogador.setHumor(jogador.getHumor() - 20);
+        jogador.setSaude(jogador.getSaude() - 20);
+        jogador.setDinheiro(jogador.getDinheiro() + 60);
+        jogador.setHabilidade(jogador.getHabilidade() + 10);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }

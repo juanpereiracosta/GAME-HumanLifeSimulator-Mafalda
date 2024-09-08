@@ -39,6 +39,7 @@ public class Jogador extends Pessoa {
         this.sims = sims;
     }
 
+
     public int getEstatuto() {
         return estatuto;
     }

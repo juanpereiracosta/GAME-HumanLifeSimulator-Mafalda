@@ -27,11 +27,9 @@ public class HabilidadeComportamentos {
                 + sims.nomeProfessor + " aumenta.");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setSaude(jogador.getSaude() + 5);
-        jogador.setDinheiro(jogador.getDinheiro() - 10);
         jogador.setHumor(jogador.getHumor() + 20);
-        jogador.setHabilidade(jogador.getHabilidade() + 150);
-        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 100);
+        jogador.setHabilidade(jogador.getHabilidade() + 50);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -45,11 +43,10 @@ public class HabilidadeComportamentos {
         System.out.println("Mas preste atenção na saúde e dinheiro de " + sims.nomePersonagemPrincipal + ", ok?");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setSaude(jogador.getSaude() - 10);
-        jogador.setDinheiro(jogador.getDinheiro() - 20);
+        jogador.setSaude(jogador.getSaude() - 20);
         jogador.setHumor(jogador.getHumor() - 10);
-        jogador.setHabilidade(jogador.getHabilidade() + 200);
-        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 150);
+        jogador.setHabilidade(jogador.getHabilidade() + 60);
+        sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         jogador.calcularEstatuto();
         sims.estatutoProfessorEAmigo();
     }
@@ -93,7 +90,7 @@ public class HabilidadeComportamentos {
             default:
                 System.out.println("*****************************");
                 System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinis.size());
-                return; // Sai do método se a escolha for inválida
+                return;
         }
 
         // Exibe o vinil escolhido
@@ -107,10 +104,9 @@ public class HabilidadeComportamentos {
         }
         System.out.println("*****************************");
         System.out.println();
-        jogador.setSaude(jogador.getSaude() + 10);
-        jogador.setDinheiro(jogador.getDinheiro() - 10);
-        jogador.setHumor(jogador.getHumor() + 10);
-        jogador.setHabilidade(jogador.getHabilidade() + 100);
+        jogador.setDinheiro(jogador.getDinheiro() - 30);
+        jogador.setHumor(jogador.getHumor() + 50);
+        jogador.setHabilidade(jogador.getHabilidade() + 20);
         jogador.calcularEstatuto();
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         sims.estatutoProfessorEAmigo();
@@ -119,7 +115,7 @@ public class HabilidadeComportamentos {
     public void terAula() {
         System.out.println();
         System.out.println("*****************************");
-        System.out.println("Cada aula de " + sims.instrumentoEscolhido + " com " + sims.nomeProfessor + " é muito " +
+        System.out.println("Cada aula de " + sims.instrumentoEscolhido + " com " + sims.nomeProfessor + " é muito" +
                 " importante para que " + sims.nomePersonagemPrincipal + " alcance seu objetivo.");
         System.out.println("Sem contar que, a cada aula que " + sims.nomePersonagemPrincipal + " faz, o estatuto de " +
                         sims.nomeProfessor + " aumenta.");
@@ -127,8 +123,8 @@ public class HabilidadeComportamentos {
                 sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 150.");
         System.out.println("*****************************");
         System.out.println();
-        jogador.setDinheiro(jogador.getDinheiro() - 20);
-        jogador.setHumor(jogador.getHumor() + 30);
+        jogador.setDinheiro(jogador.getDinheiro() - 30);
+        jogador.setHumor(jogador.getHumor() + 40);
         jogador.setHabilidade(jogador.getHabilidade() + 50);
         sims.nomeProfessor.setEstatuto(sims.nomeProfessor.getEstatuto() + 50);
         jogador.calcularEstatuto();

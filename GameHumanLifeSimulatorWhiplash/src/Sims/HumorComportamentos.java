@@ -98,8 +98,8 @@ public class HumorComportamentos {
 
         // Exibe o vinil escolhido
         if (vinhoEscolhido != null) {
-            System.out.println(vinhoEscolhido + " é muito saboroso!");
-            System.out.println("Boa escolha, uma taça de " + vinhoEscolhido + " fará bem a " + sims.nomePersonagemPrincipal + ".");
+            System.out.println("*****************************");
+            System.out.println("Boa escolha! Uma taça de " + vinhoEscolhido + " fará bem a " + sims.nomePersonagemPrincipal + ".");
             System.out.println("Ah, não se esqueça de sempre prestar atenção no seu dinheiro, ok?");
         }
         System.out.println("*****************************");
@@ -120,7 +120,6 @@ public class HumorComportamentos {
         System.out.println("Lembrando que o estatuto de " + sims.nomeAmigo + " aumenta a cada encontro.");
         System.out.println("*****************************");
         System.out.println();
-        sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 20);
         jogador.setHumor(jogador.getHumor() + 50);
         jogador.setSaude(jogador.getSaude() + 20);
         sims.nomeAmigo.setEstatuto(sims.nomeAmigo.getEstatuto() + 50);
