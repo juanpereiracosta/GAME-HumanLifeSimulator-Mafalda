@@ -7,12 +7,19 @@ public class Eventos {
     private Jogador jogador;
     private Sims sims;
 
+    /**
+     * Método construtor para <b>Eventos</b>
+     * @param jogador
+     * @param sims
+     */
     public Eventos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
-        //A instância de Sims é passada para que método resfriado() acesse detalhes de Sims, como nomePersonagemPrincipal.
         this.sims = sims;
     }
 
+    /**
+     * Método que deixa o personagem resfriado
+     */
     public void resfriado() {
         System.out.println("**********************");
         System.out.println("O tempo mudou e " + sims.nomePersonagemPrincipal + " pegou um resfriado.");
@@ -22,6 +29,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem cair de bicicleta
+     */
     public void quedaBicicleta() {
         System.out.println("**********************");
         System.out.println("Ao andar de bicicleta, " + sims.nomePersonagemPrincipal + " teve um pequeno acidente.");
@@ -34,6 +44,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter insônia
+     */
     public void insonia() {
         System.out.println("**********************");
         System.out.println("Essa não foi uma boa noite de sono para " + sims.nomePersonagemPrincipal);
@@ -45,6 +58,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter um bloqueio criativo
+     */
     public void bloqueioCriativo() {
         System.out.println("**********************");
         System.out.println(sims.nomePersonagemPrincipal + " não está com inspiração hoje.");
@@ -56,6 +72,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem tocar em um casamento como trabalho extra
+     */
     public void tocarEmCasamento() {
         System.out.println("**********************");
         System.out.println("Surgiu uma oportunidade para " + sims.nomePersonagemPrincipal + " tocar em um casamento.");
@@ -66,6 +85,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter uma discussão com seu professor
+     */
     public void discussaoComProfessor() {
         System.out.println("**********************");
         System.out.println("Infelizmente, " + sims.nomePersonagemPrincipal + " teve uma pequena discussão com ." +
@@ -83,6 +105,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter uma discussão com seu amigo
+     */
     public void discussaoComAmigo() {
         System.out.println("**********************");
         System.out.println("Dessa vez, " + sims.nomePersonagemPrincipal + " acabou brigando com " +
@@ -99,6 +124,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter um dia de sorte, em que ele encontra dinheiro na rua
+     */
     public void diaDeSorte() {
         System.out.println("**********************");
         System.out.println("Hoje é o dia da sorte!");
@@ -109,6 +137,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter uma visita surpresa da mãe
+     */
     public void visitaDaMae() {
         System.out.println("**********************");
         System.out.println(sims.nomePersonagemPrincipal + " recebeu uma visita inesperada da mãe. Isso melhorou seu " +
@@ -118,6 +149,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o instrumento do personagem ficar avariado
+     */
     public void instrumentoAvariado() {
         System.out.println("**********************");
         System.out.println("Parece que o " + sims.instrumentoEscolhido + " está com um pequeno defeito.");
@@ -131,6 +165,9 @@ public class Eventos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem receber uma prenda surpresa do amigo
+     */
     public void prendadoAmigo() {
         System.out.println("**********************");
         System.out.println("Dessa vez, que resolveu fazer uma surpresa para " + sims.nomePersonagemPrincipal +

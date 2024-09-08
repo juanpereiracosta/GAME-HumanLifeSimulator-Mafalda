@@ -19,6 +19,9 @@ public class HabilidadeComportamentos {
 
     Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Método que faz o personagem praticar o instrumento
+     */
     public void praticar() {
         System.out.println();
         System.out.println("*****************************");
@@ -34,6 +37,9 @@ public class HabilidadeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem praticar o instrumento em excesso
+     */
     public void praticarEmExcesso() {
         System.out.println();
         System.out.println("*****************************");
@@ -51,6 +57,9 @@ public class HabilidadeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem escolher um vinil para comprar
+     */
     public void comprarVinilDeJazz() {
         System.out.println();
         System.out.println("*****************************");
@@ -93,13 +102,12 @@ public class HabilidadeComportamentos {
                 return;
         }
 
-        // Exibe o vinil escolhido
         if (vinilEscolhido != null) {
             System.out.println("*****************************");
             System.out.println(vinilEscolhido + " é uma ótima escolha!");
             System.out.println("Certamente " + sims.nomePersonagemPrincipal + " fará bom proveito.");
             System.out.println("Quando " + sims.nomePersonagemPrincipal + " ouve um vinil de jazz e aumenta suas " +
-                    "referências, o estatuto de " + sims.nomeProfessor + " aumenta.");
+                    "referências, o estatuto de " + sims.nomeProfessor + " também aumenta.");
             System.out.println("Ah, mas não se esqueça de prestar atenção no dinheiro sempre que comprar algo, ok?");
         }
         System.out.println("*****************************");
@@ -112,6 +120,9 @@ public class HabilidadeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem ter aula com o professor
+     */
     public void terAula() {
         System.out.println();
         System.out.println("*****************************");

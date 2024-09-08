@@ -8,6 +8,10 @@ public class Pessoa {
     private Profissao profissao;
     int estatuto;
 
+    /**
+     * Método construtor para <b>Pessoa</b>
+     * @param nome
+     */
     public Pessoa(String nome) {
         this.nome = nome;
     }

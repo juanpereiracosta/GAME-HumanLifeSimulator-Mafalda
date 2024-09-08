@@ -12,6 +12,11 @@ public class HumorComportamentos {
     private Jogador jogador;
     private Sims sims;
 
+    /**
+     * Método construtor para <b>HumorComportamentos</b>
+     * @param jogador
+     * @param sims
+     */
     public HumorComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
         this.sims = sims;
@@ -19,6 +24,9 @@ public class HumorComportamentos {
 
     Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Método que faz o personagem assistir a um concerto de jazz
+     */
     public void assistirConcerto() {
         System.out.println();
         System.out.println("*****************************");
@@ -39,6 +47,9 @@ public class HumorComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem comer uma junkie food
+     */
     public void comerJunkieFood() {
         System.out.println();
         System.out.println("*****************************");
@@ -53,6 +64,9 @@ public class HumorComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem escolher um vinho para comprar
+     */
     public void comprarVinho() {
         System.out.println();
         System.out.println("*****************************");
@@ -71,11 +85,9 @@ public class HumorComportamentos {
             index++;
         }
 
-        // Scanner para ler a entrada do usuário
         System.out.print("Digite o número do vinho que deseja comprar: ");
         int escolha = scanner.nextInt();
 
-        // Variável para armazenar o vinil escolhido pelo jogador
         Vinho vinhoEscolhido = null;
 
         switch (escolha) {
@@ -93,10 +105,9 @@ public class HumorComportamentos {
                 break;
             default:
                 System.out.println("Escolha inválida. Por favor, escolha um número de 1 a " + listaVinhos.size());
-                return; // Sai do método se a escolha for inválida
+                return;
         }
 
-        // Exibe o vinil escolhido
         if (vinhoEscolhido != null) {
             System.out.println("*****************************");
             System.out.println("Boa escolha! Uma taça de " + vinhoEscolhido + " fará bem a " + sims.nomePersonagemPrincipal + ".");
@@ -112,6 +123,9 @@ public class HumorComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem encontrar seu amigo
+     */
     public void encontrarPesssoaFavorita() {
         System.out.println();
         System.out.println("*****************************");

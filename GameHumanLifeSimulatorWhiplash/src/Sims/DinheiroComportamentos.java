@@ -7,11 +7,19 @@ public class DinheiroComportamentos {
     private Jogador jogador;
     private Sims sims;
 
+    /**
+     * Método construtor para <b>DinheiroComportamentos</b>
+     * @param jogador
+     * @param sims
+     */
     public DinheiroComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
         this.sims = sims;
     }
 
+    /**
+     * Método que faz o personagem trabalhar
+     */
     public void trabalhar() {
         System.out.println();
         System.out.println("*****************************");
@@ -25,6 +33,9 @@ public class DinheiroComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem fazer hora extra no trabalho
+     */
     public void fazerHoraExtra() {
         System.out.println();
         System.out.println("*****************************");
@@ -40,6 +51,9 @@ public class DinheiroComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem tocar em um bar como renda extra
+     */
     public void tocarEmBar() {
         System.out.println();
         System.out.println("*****************************");

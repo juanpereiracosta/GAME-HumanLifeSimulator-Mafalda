@@ -7,6 +7,10 @@ public class Npc extends Pessoa {
     private Profissao profissao;
     private int estatuto;
 
+    /**
+     * Método construtor para <b>Profissao</b>
+     * @param nome
+     */
     public Npc(String nome) {
         super(nome);
         this.estatuto = 0;

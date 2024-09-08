@@ -3,7 +3,8 @@ package Sims;
 import Pessoa.Jogador;
 import Pessoa.Npc;
 import Profissao.Profissao;
-
+import org.w3c.dom.ls.LSOutput;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,28 +31,30 @@ public class Sims {
         // A instância de Eventos deve operar sobre a instância específica de Jogador que foi passada como parâmetro
         this.eventos = new Eventos(jogador, this);
 
-        // this como parâmetro do tipo Sims parta evitar recursão infinita e conflita entre as instâncias
+        /* this como parâmetro do tipo Sims para evitar recursão infinita e conflito entre as instâncias
+        Pelo que entendi, é como se a o código dissesse "é ESTE o parâmetro que deve ser levado em conta. Dessa forma,
+        não há conflito entre instâncias. */
         this.habilidadeComportamentos = new HabilidadeComportamentos(jogador, this);
-        this.dinheiroComportamentos = new DinheiroComportamentos(jogador, this); // Exemplo de inicialização
-        this.humorComportamentos = new HumorComportamentos(jogador, this); // Exemplo de inicialização
-        this.saudeComportamentos = new SaudeComportamentos(jogador, this); // Exemplo de inicialização
+        this.dinheiroComportamentos = new DinheiroComportamentos(jogador, this);
+        this.humorComportamentos = new HumorComportamentos(jogador, this);
+        this.saudeComportamentos = new SaudeComportamentos(jogador, this);
 
         profissoesDisponiveis = new ArrayList<>();
         instrumentosMusicais = new ArrayList<>();
     }
 
+    /**
+     * Método que limpa a tela da consola
+     */
     public void limparTela() {
-        scanner.nextLine();  // Aguarda o usuário pressionar Enter
+        scanner.nextLine();
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    public void espaco() {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-    }
-
+    /**
+     * Método que lista opções de profissões
+     */
     public void listarProfissoes() {
         profissoesDisponiveis.add(new Profissao("Atendente de mesa", 10, false));
         profissoesDisponiveis.add(new Profissao("Atendente de livraria", 10, false));
@@ -64,6 +67,9 @@ public class Sims {
         }
     }
 
+    /**
+     * Método que lista opções de instrumentos musicais
+     */
     public void listarInstrumentos() {
         instrumentosMusicais.add("safoxone");
         instrumentosMusicais.add("piano");
@@ -83,13 +89,16 @@ public class Sims {
     Profissao profissaoEscolhida;
     String instrumentoEscolhido;
 
-
+    /**
+     * Método para criar uma pessoa
+     */
     public void criarPessoa() {
         System.out.print("Escolha um nome: ");
         nomePersonagemPrincipal = scanner.nextLine();
         System.out.println();
 
-        // Novo objeto Jogador usando o nome fornecido pelo usuário
+        /* Novo objeto Jogador que tem o nome fornecido pelo utilizador como parâmetro, armazenado na variável
+        nomePersonagemPrincipal */
         jogador = new Jogador(nomePersonagemPrincipal);
 
         System.out.println("Agora, escolha uma profissão para " + nomePersonagemPrincipal + ".");
@@ -145,12 +154,19 @@ public class Sims {
         }
     }
 
+    /**
+     * Método para criar um Npc
+     * @return nome do Npc armazenado na variável nomeNpc que é parâmetro do objeto do tipo Npc
+     */
     public Npc criarNpc() {
         System.out.print("Escolha um nome: ");
         String nomeNpc = scanner.nextLine();
         return new Npc(nomeNpc);
     }
 
+    /**
+     * Método que exibe os detalhes do personagem principal
+     */
     public void exibirDetalhesPersonagemPrincipal() {
         System.out.println("********************************");
         System.out.println("*** Detalhes de " + nomePersonagemPrincipal + " ***");
@@ -162,12 +178,18 @@ public class Sims {
         System.out.println("********************************");
     }
 
+    /**
+     * Método para calcular o estatuto
+     */
     public void estatutoProfessorEAmigo() {
         System.out.println("Estatuto de " + nomeProfessor + ": " + (nomeProfessor.getEstatuto()));
         System.out.println("**********************");
         System.out.println("Estatuto de " + nomeAmigo + ": " + (nomeAmigo.getEstatuto()));
     }
 
+    /**
+     * Método com a introdução do jogo
+     */
     public void introJogo() {
         System.out.println("\n");
         System.out.println("*** Whiplash ***");
@@ -229,7 +251,7 @@ public class Sims {
         System.out.println("Alguns comportamentos de " + nomePersonagemPrincipal + " irão interferir no" +
                 " estatuto de " + nomeProfessor + ".");
         System.out.println("Por isso, preste atenção neste detalhe, pois para que " + nomePersonagemPrincipal + " cumpra seu" +
-                " objetivo, " + nomeProfessor + " precisa ter um estatuto acima de 150.");
+                " objetivo, " + nomeProfessor + " precisa ter um estatuto acima de 2000.");
         limparTela();
         System.out.println("Agora, crie a pessoa favorita no mundo de " + nomePersonagemPrincipal + ".");
         System.out.println("Essa pessoa será importante para apoiar " + nomePersonagemPrincipal + " em busca de seu objetivo.");
@@ -240,7 +262,7 @@ public class Sims {
         System.out.println("Algumas situações ao longo da vida de " + nomePersonagemPrincipal + " terão a participação " +
                 "de " + nomeAmigo + ".");
         System.out.println("Desta forma, para que " + nomePersonagemPrincipal + " cumpra seu objetivo, o estatuto de "
-        + nomeAmigo + " também deve estar acima de 150.");
+        + nomeAmigo + " também deve estar acima de 2000.");
         limparTela();
         System.out.println("********************************************************");
         System.out.println("Tudo pronto! Agora é hora de tomar decisões, divididas em quatro períodos de cada dia, [manhã," +
@@ -257,12 +279,11 @@ public class Sims {
     }
 
     /**
-     * Método com ciclos que representam os dias e meses que o personagem tem para cumprir os objetivos
+     * Método com ciclo que representa os dias que o personagem tem para cumprir o objetivo
      */
     public void jogo() {
-
         // Cada ciclo representa um dia
-        for (int i = 1; i <= 100 ; i++) {
+        for (int i = 1; i <= 1 ; i++) {
             System.out.println("**************");
             System.out.println("Dia " + i);
             System.out.println("**************");
@@ -286,7 +307,7 @@ public class Sims {
                     System.out.println("[1] Praticar " + instrumentoEscolhido);
                     System.out.println("[2] Comprar um vinil de jazz");
                     System.out.println("[3] Ter aula");
-                    System.out.println("[4] Tomar um café da manhã saudável");
+                    System.out.println("[4] Tomar um pequeno-almoço saudável");
                     System.out.println("[5] Comer uma junkie food");
                     System.out.println("[6] Encontrar " + nomeAmigo);
                     System.out.println("[7] Andar de bicicleta");
@@ -590,10 +611,59 @@ public class Sims {
                 if (i == 99 && periodo.equals("tarde")) {
                     eventos.tocarEmCasamento();
                 }
-
                 periodoIndex++;
             }
         }
     }
+
+    /**
+     * Método que exibe se o utilizador cumpriu o objetivo, consoante aos valores dos estatutos dos personagens e pergunta
+     * se ele deseja jogar novamente ou sair
+     */
+    public void fimJogo() {
+        // Condições para cumprir objetivo
+        if (jogador.getEstatuto() >= 5500 && nomeProfessor.getEstatuto() >= 2000
+                && nomeAmigo.getEstatuto() >= 2000) {
+            System.out.println();
+            System.out.println("********************");
+            System.out.println("*** PARABÉNS!!! ****");
+            System.out.println("********************");
+            System.out.println();
+            limparTela();
+            System.out.println("Graças a você " + nomePersonagemPrincipal + " tocará na Casa da Música!!!");
+            System.out.println("Com certeza daqui em diante a carreira musical dela irá decolar.");
+            limparTela();
+        } else {
+            System.out.println();
+            System.out.println("*****************************************************************************" +
+                    "*************************************************");
+            System.out.println("Infelizmente você não atingiu o objetivo de " + nomePersonagemPrincipal + " " +
+                    "de tocar na Casa da Música, pois os valores dos estatutos não são suficientes.");
+            System.out.println("*****************************************************************************" +
+                    "*************************************************");
+            System.out.println();
+
+            // Pergunta se o jogador quer continuar
+            System.out.println("O que deseja fazer agora?");
+            System.out.println("[1] Jogar novamente");
+            System.out.println("[2] Sair");
+            System.out.print("Responda aqui: ");
+            int resposta = scanner.nextInt();
+            if (resposta == 1) {
+                introJogo();
+                jogo();
+            }
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("*****************************");
+        System.out.println("Obrigado por jogar Whiplash.");
+        System.out.println("*****************************");
+        System.out.println();
+        System.out.println();
+        System.out.println("Jazz is the most beautiful music in the world, because it's freedom.");
+        System.out.println("                                                      Duke Ellington");
+    }
+
 }
 

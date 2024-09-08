@@ -7,11 +7,19 @@ public class SaudeComportamentos {
     private Jogador jogador;
     private Sims sims;
 
+    /**
+     * Método construtor para <b>SaudeComportamentos</b>
+     * @param jogador
+     * @param sims
+     */
     public SaudeComportamentos(Jogador jogador, Sims sims) {
         this.jogador = jogador;
         this.sims = sims;
     }
 
+    /**
+     * Método que faz o personagem andar de bicicleta
+     */
     public void andarDeBike() {
         System.out.println();
         System.out.println("*****************************");
@@ -25,6 +33,9 @@ public class SaudeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem comer comida saudável
+     */
     public void comerComidaSaudavel() {
         System.out.println();
         System.out.println("*****************************");
@@ -37,6 +48,9 @@ public class SaudeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem fazer terapia
+     */
     public void fazerTerapia() {
         System.out.println();
         System.out.println("*****************************");
@@ -52,6 +66,9 @@ public class SaudeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem dormir
+     */
     public void dormir() {
         System.out.println();
         System.out.println("*****************************");
@@ -65,6 +82,9 @@ public class SaudeComportamentos {
         sims.estatutoProfessorEAmigo();
     }
 
+    /**
+     * Método que faz o personagem tomar café
+     */
     public void tomarCafe() {
         System.out.println();
         System.out.println("*****************************");

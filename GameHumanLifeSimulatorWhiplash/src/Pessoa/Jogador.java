@@ -5,16 +5,15 @@ import Sims.Sims;
 
 public class Jogador extends Pessoa {
 
-
     private String objetivo;
     private int saude;
     private int humor;
     private int habilidade;
     private int dinheiro;
     private Sims sims;
+
     /**
      * Método construtor para <b>Jogador</b> com atributo e parâmetro da superclasse <b>Pessoa</b>
-     *
      * @param nome
      */
     public Jogador(String nome) {
@@ -23,10 +22,10 @@ public class Jogador extends Pessoa {
 
     /**
      * Método construtor para <b>Jogador</b> com atributos e parâmetros específicos
-     *
      * @param nome
      * @param profissao
      * @param objetivo
+     * @param sims
      */
     public Jogador(String nome, Profissao profissao, String objetivo, Sims sims) {
         super(nome);
@@ -81,6 +80,9 @@ public class Jogador extends Pessoa {
         return objetivo;
     }
 
+    /**
+     * Método que calcula o estatuto do personagem
+     */
     public void calcularEstatuto() {
         System.out.println("**********************");
         System.out.println("Saúde: " + saude);
