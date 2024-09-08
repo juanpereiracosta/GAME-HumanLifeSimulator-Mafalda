@@ -131,7 +131,7 @@ public class HabilidadeComportamentos {
         System.out.println("Sem contar que, a cada aula que " + sims.nomePersonagemPrincipal + " faz, o estatuto de " +
                         sims.nomeProfessor + " aumenta.");
         System.out.println("Preste atenção neste detalhe, pois para alcançar o objetivo de " +
-                sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 150.");
+                sims.nomePersonagemPrincipal + " o estatuto de " + sims.nomeProfessor + " deve estar acima de 2000.");
         System.out.println("*****************************");
         System.out.println();
         jogador.setDinheiro(jogador.getDinheiro() - 30);

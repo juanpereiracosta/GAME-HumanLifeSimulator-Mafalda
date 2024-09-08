@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Jogador jogador = new Jogador("jogador");
+        Jogador jogador = new Jogador("nomeJogador");
         Sims sims = new Sims(jogador);
         sims.introJogo();
         sims.jogo();

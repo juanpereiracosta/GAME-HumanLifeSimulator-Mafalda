@@ -3,6 +3,7 @@ package Sims;
 import Pessoa.Jogador;
 import Pessoa.Npc;
 import Profissao.Profissao;
+import com.sun.security.jgss.GSSUtil;
 import org.w3c.dom.ls.LSOutput;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -192,7 +193,15 @@ public class Sims {
      */
     public void introJogo() {
         System.out.println("\n");
-        System.out.println("*** Whiplash ***");
+        System.out.println("         ******           ");
+        System.out.println("     ***************     ");
+        System.out.println(" ********      ********* ");
+        System.out.println("********        *********");
+        System.out.println("******  WHIPLASH  *******");
+        System.out.println("*********      **********");
+        System.out.println("**********    ***********");
+        System.out.println("     ***************     ");
+        System.out.println("         ******           ");
         System.out.println("\n");
         System.out.println("Pressione enter para continuar...");
         limparTela();
@@ -205,9 +214,7 @@ public class Sims {
         System.out.println("Estamos falando de alguém que ama jazz e tem um objetivo de vida:");
         System.out.println();
         System.out.println("***********************");
-        System.out.println();
         System.out.println("Tocar na Casa da Música");
-        System.out.println();
         System.out.println("***********************");
         limparTela();
         System.out.println("Não é um objetivo fácil de se alcançar...");
@@ -222,7 +229,8 @@ public class Sims {
         System.out.println("Dinheiro");
         System.out.println("**********");
         limparTela();
-        System.out.println("O seu estatuto será gerado a partir da média destes quatro fatores.");
+        System.out.println("O seu estatuto será gerado a partir da média destes quatro fatores. Ao final do jogo, " +
+                "nenhum deles pode estar negativo.");
         System.out.println();
         System.out.println("Para cumprir o objetivo, deverá ter um estatuto acima de 5500...");
         limparTela();
@@ -283,7 +291,7 @@ public class Sims {
      */
     public void jogo() {
         // Cada ciclo representa um dia
-        for (int i = 1; i <= 1 ; i++) {
+        for (int i = 1; i <= 100 ; i++) {
             System.out.println("**************");
             System.out.println("Dia " + i);
             System.out.println("**************");
@@ -297,7 +305,6 @@ public class Sims {
                 limparTela();
                 String periodo = periodosDoDia[periodoIndex];
 
-                // Colocar métodos para o jogador escolher
                 if (periodo.equals("manhã")) {
                     System.out.println("Período: " + periodo);
                     System.out.println("***************");
@@ -541,74 +548,92 @@ public class Sims {
                 }
 
                 if (i == 5 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.quedaBicicleta();
                 }
 
                 if (i == 8 && periodo.equals("almoço")) {
+                    limparTela();
                     eventos.bloqueioCriativo();
                 }
 
                 if (i == 15 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.insonia();
                 }
 
                 if (i == 22 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.tocarEmCasamento();
                 }
 
                 if (i == 29 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.instrumentoAvariado();
                 }
 
                 if (i == 36 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.discussaoComProfessor();
                 }
 
                 if (i == 45 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.visitaDaMae();
                 }
 
                 if (i == 45 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.discussaoComAmigo();
                 }
 
                 if (i == 51 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.discussaoComAmigo();
                 }
 
                 if (i == 56 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.diaDeSorte();
                 }
 
                 if (i == 63 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.insonia();
                 }
 
                 if (i == 69 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.visitaDaMae();
                 }
 
                 if (i == 72 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.quedaBicicleta();
                 }
 
                 if (i == 78 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.bloqueioCriativo();
                 }
 
                 if (i == 85 && periodo.equals("noite")) {
+                    limparTela();
                     eventos.tocarEmCasamento();
                 }
 
                 if (i == 91 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.resfriado();
                 }
 
                 if (i == 94 && periodo.equals("manhã")) {
+                    limparTela();
                     eventos.prendadoAmigo();
                 }
 
                 if (i == 99 && periodo.equals("tarde")) {
+                    limparTela();
                     eventos.tocarEmCasamento();
                 }
                 periodoIndex++;
@@ -623,7 +648,8 @@ public class Sims {
     public void fimJogo() {
         // Condições para cumprir objetivo
         if (jogador.getEstatuto() >= 5500 && nomeProfessor.getEstatuto() >= 2000
-                && nomeAmigo.getEstatuto() >= 2000) {
+                && nomeAmigo.getEstatuto() >= 2000 && jogador.getHabilidade() > 0 && jogador.getDinheiro() > 0 &&
+        jogador.getHumor() > 0 && jogador.getSaude() > 0) {
             System.out.println();
             System.out.println("********************");
             System.out.println("*** PARABÉNS!!! ****");
@@ -637,8 +663,7 @@ public class Sims {
             System.out.println();
             System.out.println("*****************************************************************************" +
                     "*************************************************");
-            System.out.println("Infelizmente você não atingiu o objetivo de " + nomePersonagemPrincipal + " " +
-                    "de tocar na Casa da Música, pois os valores dos estatutos não são suficientes.");
+            System.out.println("Infelizmente você não atingiu o objetivo de " + nomePersonagemPrincipal + ".");
             System.out.println("*****************************************************************************" +
                     "*************************************************");
             System.out.println();

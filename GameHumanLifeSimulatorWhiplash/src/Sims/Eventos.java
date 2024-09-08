@@ -63,7 +63,7 @@ public class Eventos {
      */
     public void bloqueioCriativo() {
         System.out.println("**********************");
-        System.out.println(sims.nomePersonagemPrincipal + " não está com inspiração hoje.");
+        System.out.println(sims.nomePersonagemPrincipal + " teve um bloqueio criativo e não está com inspiração hoje.");
         System.out.println("Sua habilidade diminuiu um pouco.");
         System.out.println("Talvez dormir um pouco ou andar de bicicleta possa ajudar.");
         jogador.setHumor(jogador.getHumor() - 20);
